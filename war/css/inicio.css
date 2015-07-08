@@ -33,29 +33,6 @@ body {
 	margin-bottom: 5px;
 }
 
-.menu {
-	text-decoration: none;
-	padding: 1px 3px;
-	display: inline-block;
-	-webkit-transition: all 0.5s linear;
-	-moz-transition: all 0.5s linear;
-	-ms-transition: all 0.5s linear;
-	-o-transition: all 1s linear;
-	transition: all 0.5s linear;
-}
-
-.menu :hover {
-	-webkit-transform: scale(1.5, 1.5);
-	-moz-transform: scale(1.5, 1.5);
-	-ms-transform: scale(1.5, 1.5);
-	-o-transform: scale(1.5, 1.5);
-	transform: scale(1.5, 1.5);
-	-webkit-transition: all .8s linear;
-	-moz-transition: all .8s linear;
-	-ms-transition: all .8s linear;
-	-o-transition: all .8s linear;
-	transition: all .8s linear;
-}
 .menu :hover {
 	cursor:pointer;
 
