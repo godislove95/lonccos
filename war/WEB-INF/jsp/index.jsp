@@ -11,17 +11,17 @@
 </head>
 <body>
 	<div id="cabeza">
-		<div id="titulo">
-			<img id="titulo_logo" alt="titulo_logo" src="img/titulo_logo.png">
-		</div>
 		<img class="menu" id="inicio" alt="inicio" src="img/inicio.png">
 		<img class="menu" id="nosotros" alt="nosotros" src="img/nosotros.png">
 		<img class="menu" id="menu" alt="menu" src="img/menu.png">
-		<img class="menu" id="ofertas" alt="inicio" src="img/inicio.png">
+		<img class="menu" id="ofertas" alt="ofertas" src="img/ofertas.png">
 		<img class="menu" id="locales" alt="locales" src="img/locales.png">
 		<img class="menu" id="eventos" alt="eventos" src="img/eventos.png">
 		<img class="menu" id="reservas" alt="reservas" src="img/reservas.png">
 		<img class="menu" id="ingresar" alt="ingresar" src="img/ingresar.png">
+		<div id="titulo">
+			<img id="titulo_logo" alt="titulo_logo" src="img/titulo_logo.png">
+		</div>
 	</div>
 	<div id="cuerpo">
 	</div>
