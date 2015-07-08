@@ -25,6 +25,7 @@ body{
 	border-radius:2em;
 	color:white;
 	text-align:center;
+	
 }
 div#registro input[type=text],input[type=password]{
 	margin:0 1em 1em 0;
@@ -36,6 +37,7 @@ div#registro input[type=text],input[type=password]{
 }
 div#registro input.primero[type=submit]{
 	padding:1em;
+	margin-top:5em;
 	font-size:15px;
 	background:#b9913e;
 	border:none;

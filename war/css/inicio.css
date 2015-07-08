@@ -1,25 +1,27 @@
 body {
 	
 }
-#titulo {
-	
-}
+
 #titulo_logo {
 	width: 50%;
 }
+
 #cabeza {
 	text-align: center;
 	width: 80%;
 	margin: auto;
 }
+
 .menu {
 	margin: auto;
 	width: 10%;
 	display: inline-block;
 }
+
 .menu:hover {
     cursor: pointer;
 }
+
 #cuerpo {
 	padding-top: 4px;
 	padding-bottom: 4px;
@@ -30,6 +32,11 @@ body {
 	text-align: center;
 	margin-bottom: 5px;
 }
+
+.menu :hover {
+	cursor:pointer;
+
+}
 #pie {
 	padding-top: 4px;
 	border-radius: 10px;
@@ -39,9 +46,11 @@ body {
 	margin: auto;
 	text-align: center;
 }
+
 #pie_text {
 	font-family: Comic Sans MS, Arial;
 }
+
 #cargando {
 	width: 30%;
 }

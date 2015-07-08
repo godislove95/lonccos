@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+body{
+	font-family: Comic Sans MS, Arial;
+}
+#cero{
+	background: #51401c;
+	border-radius:2em;
+	margin: 5em auto;
+	max-width:35%;
+	padding:2em ;
+	text-align: center;
+	color:white; 
+}
+#formulario{
+	display:table;
+	text-align:center;
+	margin:auto;	
+}
+.row {
+	display: table-row;
+	font-weight: bold;
+	text-align:center;
+}
+
+div#calumna1,div#columna2 {
+	color:white;
+	display: table-cell;
+	border:none;
+	border-radius:8px;
+	border-width: thin;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align:left;
+}
