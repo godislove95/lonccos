@@ -19,6 +19,7 @@ body {
 }
 #cuerpo {
 	padding-top: 4px;
+	padding-bottom: 4px;
 	border-radius: 10px;
 	background-color: #B5954A;
 	width: 66.5%;

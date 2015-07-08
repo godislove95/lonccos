@@ -15,76 +15,40 @@ public class RestaurantServlet extends HttpServlet {
 			
 			String rest=req.getParameter("rest");
 			switch (rest){
-			case "Inicio":
+			case "inicio":
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/inicio.jsp");
 				break;
 			
-			case "Ubiquenos":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/ubicacion.jsp");
+			case "nosotros":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/nosotros.jsp");
 				break;
 				
-			case "Contactenos":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/contactenos.jsp");
+			case "menu":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/menu.jsp");
 				break;
 				
-			case "Reseña":
-				mandar=getServletContext().getRequestDispatcher("");
+			case "ofertas":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/ofertas.jsp");
 				break;
 				
-			case "MENUS":
-				mandar=getServletContext().getRequestDispatcher("");
+			case "locales":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/locales.jsp");
 				break;
 				
-			case "Entradas":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/entradas.jsp");
+			case "eventos":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/eventos.jsp");
 				break;
 				
-			case "Sopas":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/sopa.jsp");
+			case "reservas":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/reservas.jsp");
 				break;
 				
-			case "Ensaladas":
-				mandar=getServletContext().getRequestDispatcher("");
+			case "ingresar":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/ingresar.jsp");
 				break;
 				
-			case "Plato De Fondo":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/platosfondo.jsp");
-				break;
-				
-			case "Extras":
-				mandar=getServletContext().getRequestDispatcher("");
-				break;
-				
-			case "BEBIDAS":
-				mandar=getServletContext().getRequestDispatcher("");
-				break;
-				
-			case "Bebidas Alcoholicas":
-				mandar=getServletContext().getRequestDispatcher("");
-				break;
-				
-			case "Bibidas Gasificadas":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/bebidasgas.jsp");
-				break;
-				
-			case "RESERVAR":
-				mandar=getServletContext().getRequestDispatcher("");	
-				break;
-				
-			case "Reservar Mesa":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/reservaMesa.jsp");
-				break;
-				
-			case "Reservar Local":
-				mandar=getServletContext().getRequestDispatcher("");
-				break;
-			
-			case "LOGIN":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");	
-				break;
-				
-			case "Registrarse":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/formCliente.jsp");
+			case "registrarse":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/registrarse.jsp");
 				break;
 				
 			default :
