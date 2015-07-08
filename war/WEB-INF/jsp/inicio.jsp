@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<div id="slider">
+		<img class="cambio" src="img/slider1.png">
+	</div>
 </body>
 </html>

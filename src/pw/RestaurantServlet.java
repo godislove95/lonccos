@@ -15,8 +15,8 @@ public class RestaurantServlet extends HttpServlet {
 			
 			String rest=req.getParameter("rest");
 			switch (rest){
-			case "INICIO":
-				mandar=getServletContext().getRequestDispatcher("/index.html");
+			case "Inicio":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/inicio.jsp");
 				break;
 			
 			case "Ubiquenos":
