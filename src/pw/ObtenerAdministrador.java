@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 
 @SuppressWarnings("serial")
-public class ObtenerClientes extends HttpServlet{
+public class ObtenerAdministrador extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -27,10 +27,10 @@ public class ObtenerClientes extends HttpServlet{
 			try{
 				Query q = pm.newQuery(Cliente.class);
 				@SuppressWarnings("unchecked")
-				List<Cliente> cliente = (List<Cliente>) q.execute();
-				req.setAttribute("lista", cliente);
+				List<Administrador> admin = (List<Administrador>) q.execute();
+				req.setAttribute("lista", admin);
 				System.out.println("good");
-				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/registroClientes.jsp");
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/Administrador.jsp");
 				rd.forward(req, resp);
 			}catch(Exception e){
 				System.out.println("  ");

@@ -1,44 +1,35 @@
 package pw;
-
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 import com.google.appengine.api.datastore.Key;
-
 @PersistenceCapable
-public class Plato {
+public class Bebida {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private int id;
-	
 	@Persistent
 	private String nombre;
-	
-	@Persistent
-	private int precio;
-	
 	@Persistent
 	private String tipo;
-	
 	@Persistent
-	private String imagen;
-	
+	private String precio;
 	@Persistent
 	private String descripcion;
-
-	public Plato(int id, String nombre, int precio, String tipo, String imagen,
-			String descripcion) {
+	@Persistent
+	private String img;
+	public Bebida(int id, String nombre, String tipo, String precio,
+			String descripcion, String img) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.precio = precio;
 		this.tipo = tipo;
-		this.imagen = imagen;
+		this.precio = precio;
 		this.descripcion = descripcion;
+		this.img = img;
 	}
-
 	public int getId() {
 		return id;
 	}
@@ -46,50 +37,38 @@ public class Plato {
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public int getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(int precio) {
-		this.precio = precio;
-	}
-
 	public String getTipo() {
 		return tipo;
 	}
-
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
-	public String getImagen() {
-		return imagen;
+	public String getPrecio() {
+		return precio;
 	}
-
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
+	public void setPrecio(String precio) {
+		this.precio = precio;
 	}
-
 	public String getDescripcion() {
 		return descripcion;
 	}
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	@Override
 	public String toString() {
-		return "Plato [id=" + id + ", nombre=" + nombre + ", precio=" + precio
-				+ ", tipo=" + tipo + ", imagen=" + imagen + ", descripcion="
-				+ descripcion + "]";
+		return "Bebida [id=" + id + ", nombre=" + nombre + ", tipo=" + tipo
+				+ ", precio=" + precio + ", descripcion=" + descripcion
+				+ ", img=" + img + "]";
 	}
-	
 
-	
 }

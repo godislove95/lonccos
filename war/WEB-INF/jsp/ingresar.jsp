@@ -30,7 +30,6 @@
 				</div>
 				<input type="submit" value="Ingresar" class="primero"> 
 			</form>
-			
 			<input id="registro" type="submit" name="rest" value="Registrarse" class="segundo">
 		</div>
 	</div>
