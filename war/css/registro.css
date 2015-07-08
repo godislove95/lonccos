@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 body{
 	font-family: Comic Sans MS, Arial;
-	color:white; 
+	
 }
 section#uno{
 	margin: 0.5em auto;
@@ -16,6 +16,7 @@ section#cero{
 	max-width:35%;
 	padding:2em ;
 	text-align: center;
+	color:white; 
 }
 .table{
 	display:table;
