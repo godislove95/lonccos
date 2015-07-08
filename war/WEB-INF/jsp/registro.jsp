@@ -15,7 +15,7 @@
 			<div id="table">
 				<h2 align="center">Registro</h2>
 				
-				<form action="/xD" id="saveCliente" method="post" onsubmit="return validar();">
+				<form action="/saveCliente" id="saveCliente" method="post" onsubmit="return validar();">
 				<div class="row">
 				<div class="cell">Ingrese su Nombre :</div>
 				<div class="cell"><input type="text" name="nombre" size="40" pattern="([a-z]{2,20})|([a-z]{2,20} [a-z]{2,20})|([a-z]{2,20} [a-z]{2,20} [a-z]{2,20})" required></div>	

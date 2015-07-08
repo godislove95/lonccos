@@ -15,19 +15,17 @@
 		<h1>INGRESAR</h1>
 		<br>
 		<div id="contenedor">
-			<form method="post" action="/iniciarSesion">
+			<form action="/iniciarSesion" id="iniciarSesion">
 				<div id="contenidos">
 					<div id="columna1">Usuario:</div>
 					<div id="columna2">
-						<input type="text" name="user"pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$"required>
+						<input type="text" name="user" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$"required>
 					</div>
 				</div>
-				<div id="contenidos">
 					<div id="columna1">Contraseña:</div>
 					<div id="columna2">
 						<input type="password" name="pass" placeholder="pass" required>
 					</div>
-				</div>
 				<input type="submit" value="Ingresar" class="primero"> 
 			</form>
 			<input id="registro_submit" type="submit" name="rest" value="Registrarse" class="segundo">

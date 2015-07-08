@@ -41,12 +41,12 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 		<servlet>
-		<servlet-name>xD</servlet-name>
-		<servlet-class>pw.xD</servlet-class>
+		<servlet-name>IniciarSesion</servlet-name>
+		<servlet-class>pw.IniciarSesion</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>xD</servlet-name>
-		<url-pattern>/xD</url-pattern>
+		<servlet-name>IniciarSesion</servlet-name>
+		<url-pattern>/iniciarSesion</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>
