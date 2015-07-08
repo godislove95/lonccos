@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<img id="error" alt="error" src="img/error.png">
+	<img id="error" alt="error" src="img/error.png"><br>
+	<p>CONTRASEÑA INVALIDA</p>
+	<p>INTENTE DE NUEVO</p>
 </body>
 </html>

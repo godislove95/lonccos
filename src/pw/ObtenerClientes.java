@@ -22,8 +22,6 @@ public class ObtenerClientes extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-	
-
 			try{
 				Query q = pm.newQuery(Cliente.class);
 				@SuppressWarnings("unchecked")

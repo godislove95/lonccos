@@ -1,43 +1,46 @@
 package pw;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
-public class IniciarSesion extends HttpServlet{
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		RequestDispatcher mandar = null;
+public class IniciarSesion extends HttpServlet {
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException, ServletException {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		PrintWriter out = resp.getWriter();
-		resp.setContentType("text/html");
-		
 		Query q = pm.newQuery(Cliente.class);
-		String user = req.getParameter("user");
+		RequestDispatcher mandar = null ;
+		String email = req.getParameter("email");
 		String pass = req.getParameter("pass");
 		
-//		q.setFilter("user == userParam && pass == passParam");
-//		q.declareParameters("String userParam,String passParam");
+		q.setFilter("email == emailParam");
+		q.declareParameters("String emailParam");
 		
 		try{
-			List<Cliente> cliente = (List<Cliente>) q.execute();
-			out.println("<ul>");
-			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
-			mandar.forward(req, resp);
+			@SuppressWarnings("unchecked")
+			List<Cliente> cliente = (List<Cliente>) q.execute(email);
+			if(cliente.size() == 0){
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/noExisteEmail.jsp");
+			}
+			else if(!cliente.get(0).getPass().equals(pass)){
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/passIncorrecto.jsp");
+			}
+			else {
+				req.setAttribute("lista", cliente);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
+			}
 		}catch(Exception e){
-			
+			System.out.println(e);
+			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
 		}finally{
-			 q.closeAll();
+			pm.close();
+			mandar.forward(req, resp);
 		}
 	}
 }
