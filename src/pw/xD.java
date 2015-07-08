@@ -1,17 +1,17 @@
 package pw;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.jdo.PersistenceManager;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+import javax.jdo.Query;
 import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
-public class SaveCliente extends HttpServlet {
+public class xD extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
-			throws IOException, ServletException {
-		RequestDispatcher mandar = null ;
+			throws IOException {
+		
 		String email=req.getParameter("email");
 		String nombre = req.getParameter("nombre");
 		String paterno=req.getParameter("paterno");
@@ -19,19 +19,22 @@ public class SaveCliente extends HttpServlet {
 		int dni = Integer.parseInt(req.getParameter("dni"));
 		String pass =req.getParameter("pass");
 		
-		Cliente registro= new Cliente(email, nombre, paterno, materno, dni, pass);
+		Cliente p = new Cliente(email, nombre, paterno, materno, dni, pass);
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
+		Query q = pm.newQuery(Cliente.class);
+		
 		try{
-			pm.makePersistent(registro);
-			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
+			pm.makePersistent(p);
+			resp.getWriter().print("<p> Datos grabados correctamente </p1>");
+			
+			
 		}catch(Exception e){
 			System.out.println(e);
-			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+			resp.getWriter().println("Ocurrió un error, <a href='index.jsp'>vuelva a intentarlo</a>");
 			
 		}finally{
 			pm.close();
-			mandar.forward(req, resp);
 		}
 	}
 }

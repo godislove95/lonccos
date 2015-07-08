@@ -1,92 +1,94 @@
 package pw;
 
-	import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
-	@PersistenceCapable
-	public class Cliente {
-		@PrimaryKey
-		@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-		private String email;
-		
-		@Persistent
-		private String nombre;
-		
-		@Persistent
-		private String paterno;
-		
-		@Persistent
-		private String materno;
-		
-		@Persistent
-		private int dni;	
+@PersistenceCapable
+public class Cliente {
+	@PrimaryKey
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	
+	private String email;
+	
+	@Persistent
+	private String nombre;
+	
+	@Persistent
+	private String paterno;
+	
+	@Persistent
+	private String materno;
+	
+	@Persistent
+	private int dni;
+	
+	@Persistent
+	private String pass;
 
-		@Persistent
-		private String pass;
+	public Cliente(String email, String nombre, String paterno, String materno,
+			int dni, String pass) {
+		super();
+		this.email = email;
+		this.nombre = nombre;
+		this.paterno = paterno;
+		this.materno = materno;
+		this.dni = dni;
+		this.pass = pass;
+	}
 
-		public Cliente(String email, String nombre, String paterno,
-				String materno, int dni, String pass) {
-			super();
-			this.email = email;
-			this.nombre = nombre;
-			this.paterno = paterno;
-			this.materno = materno;
-			this.dni = dni;
-			this.pass = pass;
-		}
+	public String getEmail() {
+		return email;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
 
-		public String getEmail() {
-			return email;
-		}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-		public void setEmail(String email) {
-			this.email = email;
-		}
+	public String getPaterno() {
+		return paterno;
+	}
 
-		public String getNombre() {
-			return nombre;
-		}
+	public void setPaterno(String paterno) {
+		this.paterno = paterno;
+	}
 
-		public void setNombre(String nombre) {
-			this.nombre = nombre;
-		}
+	public String getMaterno() {
+		return materno;
+	}
 
-		public String getPaterno() {
-			return paterno;
-		}
+	public void setMaterno(String materno) {
+		this.materno = materno;
+	}
 
-		public void setPaterno(String paterno) {
-			this.paterno = paterno;
-		}
+	public int getDni() {
+		return dni;
+	}
 
-		public String getMaterno() {
-			return materno;
-		}
+	public void setDni(int dni) {
+		this.dni = dni;
+	}
 
-		public void setMaterno(String materno) {
-			this.materno = materno;
-		}
+	public String getPass() {
+		return pass;
+	}
 
-		public String getPass() {
-			return pass;
-		}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
 
-		public void setPass(String pass) {
-			this.pass = pass;
-		}
+	@Override
+	public String toString() {
+		return "Cliente [email=" + email + ", nombre=" + nombre + ", paterno="
+				+ paterno + ", materno=" + materno + ", dni=" + dni + ", pass="
+				+ pass + "]";
+	}
+	
+	
 
-		public int getDni() {
-			return dni;
-		}
-
-		@Override
-		public String toString() {
-			return "Cliente [email=" + email + ", nombre=" + nombre
-					+ ", paterno=" + paterno + ", materno=" + materno
-					+ ", dni=" + dni + ", pass=" + pass + "]";
-		}
-		
-		
 }

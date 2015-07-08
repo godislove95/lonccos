@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 public class ObtenerClientes extends HttpServlet{
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 	
@@ -33,9 +33,10 @@ public class ObtenerClientes extends HttpServlet{
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/registroClientes.jsp");
 				rd.forward(req, resp);
 			}catch(Exception e){
-				System.out.println("  ");
+				System.out.println(e);
+				System.out.println("aasd  ");
 			}
-		}
+		}	
 
 	}
 

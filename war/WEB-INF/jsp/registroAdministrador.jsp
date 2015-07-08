@@ -6,7 +6,7 @@
 <%@ page import="javax.jdo.PersistenceManager"%>
 <%@ page import="javax.servlet.*"%>
 <%
- List <Cliente> registro = (List<Cliente>)request.getAttribute("lista");
+	List <Cliente> registro = (List<Cliente>)request.getAttribute("lista");
 %>
 <%%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -39,7 +39,9 @@
 			<div class="Cell"><h3>PASSWORD</h3></div>
 		</div>
 
-		<%for(Cliente p: registro){%>
+		<%
+			for(Cliente p: registro){
+		%>
 
 		<div class="Heading">
 			<div class="Cell">
