@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+section#uno{
+	margin: 0.5em auto;
+	max-width:1000px;
+	padding:0;
+	text-align: center;
+}
+section#cero{
+	background: silver;
+	border-radius:0.5em;
+	margin: 5em auto;
+	max-width:50%;
+	padding:0.25em ;
+	text-align: center;
+}
+.table{
+	background:silver;
+	display:table;
+	text-align:center;
+	margin:auto;
+	
+}
+
+.row {
+	display: table-row;
+	font-weight: bold;
+	text-align: center;
+}
+
+.cell {
+	color:white;
+	display: table-cell;
+	border:none;
+	border-radius:8px;
+	border-width: thin;
+	padding-left: 10px;
+	padding-right: 10px;
+}
