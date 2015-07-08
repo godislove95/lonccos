@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family:areal ;
+}
+.Table{
+	display:table;
+	text-align:center;
+	margin:auto;
+}
+
+.Title {
+	background:#d5d5d5;
+	weidth:100%;
+	display: table-caption;
+	text-align: center;
+	font-weight: bold;
+	font-size: larger;
+	border-radius:7px;
+	border:1px solid black;
+	
+}
+.Heading {
+	display: table-row;
+	font-weight: bold;
+	text-align: center;
+}
+
+.Cell {
+	background:#5480fe;
+	color:white;
+	display: table-cell;
+	border:none;
+	border-radius:8px;
+	border-width: thin;
+	padding-left: 10px;
+	padding-right: 10px;
+}

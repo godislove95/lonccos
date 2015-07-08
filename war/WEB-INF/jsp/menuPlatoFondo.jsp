@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-        <%@ page import="java.util.*"%>
+    <%@ page import="java.util.*"%>
 <%@ page import="pw.*"%>
 <%@ page import="javax.jdo.Query"%>
 <%@ page import="javax.jdo.PersistenceManager"%>
@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Platos</title>
 </head>
 <body>
 	<div>
@@ -24,7 +24,7 @@
 	<div class="Table">
 
 		<div class="Title">
-			<h1>LISTA DE SOPAS</h1>
+			<h1>LISTA DE PLATOS DE FONDO</h1>
 		</div>
 		<div class="Heading">
 			<div class="Cell"><h3>NOMBRE</h3></div>
@@ -34,7 +34,7 @@
 		</div>
 
 		<%for(Plato p: registro){%>
-		<% if(p.getTipo().equals("Sopa")) %>
+		<% if(p.getTipo().equals("Fondo")) %>
 		<div class="Heading">
 			
 			<div class="Cell">
