@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#registro").click(function(event) {
+	$("#registro_submit").click(function(event) {
 		$.ajax({
             type: "POST",
             url: "restaurant",
