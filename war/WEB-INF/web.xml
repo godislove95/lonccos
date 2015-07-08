@@ -13,6 +13,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/restlonccos</url-pattern>
 	</servlet-mapping>
 	
+		<servlet>
+		<servlet-name>Restaurant</servlet-name>
+		<servlet-class>pw.RestaurantServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Restaurant</servlet-name>
+		<url-pattern>/restaurant</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>WEB-INF/jsp/index.jsp</welcome-file>
 	</welcome-file-list>

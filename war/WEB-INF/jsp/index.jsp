@@ -4,7 +4,7 @@
 <html>
 <head>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/principal.js"></script>
 <link href="css/inicio.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Restaurante Lonccos</title>
