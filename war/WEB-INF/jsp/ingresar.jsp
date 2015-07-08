@@ -23,7 +23,7 @@
 				<div id="contenidos">
 					<div id="columna1">Contraseña:</div>
 					<div id="columna2">
-						<input type="password" name="pass" required>
+						<input type="password" name="pass" placeholder="pass" required>
 					</div>
 				</div>
 				<input type="submit" value="Ingresar" class="primero"> 
