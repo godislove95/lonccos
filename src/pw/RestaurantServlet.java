@@ -92,7 +92,5 @@ public class RestaurantServlet extends HttpServlet {
 			break;
 			}
 			mandar.forward(req, resp);
-			
-		
 	}
 }
