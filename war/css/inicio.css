@@ -39,5 +39,6 @@ body {
 #pie_text {
 	font-family: Comic Sans MS, Arial;
 }
-.cambio {
+#cargando {
+	width: 30%;
 }
