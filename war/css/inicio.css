@@ -1,12 +1,41 @@
 body {
-	margin: auto;
+	
+}
+#titulo {
+	
+}
+#titulo_logo {
+	width: 50%;
 }
 #cabeza {
 	text-align: center;
-	width: 75%;
+	width: 80%;
+	margin: auto;
 }
 .menu {
 	margin: auto;
 	width: 10%;
 	display: inline-block;
+}
+#cuerpo {
+	padding-top: 4px;
+	border-radius: 10px;
+	background-color: #B5954A;
+	width: 66.5%;
+	height: 500px;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 5px;
+}
+#pie {
+	padding-top: 4px;
+	border-radius: 10px;
+	background-color: #B5954A;
+	width: 66.5%;
+	height: 105px;
+	margin: auto;
+	text-align: center;
+}
+#pie_text {
+	font-family: Comic Sans MS, Arial;
 }
