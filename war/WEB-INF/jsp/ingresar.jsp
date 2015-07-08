@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/ingresar.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/resgistrarse.js"></script>
+<script type="text/javascript" src="js/ingresar.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
 				<input type="submit" value="Ingresar" class="primero"> 
 			</form>
 			
-			<input id="registrarse" type="submit" name="rest" value="Registrarse" class="segundo">
+			<input id="registro" type="submit" name="rest" value="Registrarse" class="segundo">
 		</div>
 	</div>
 </body>

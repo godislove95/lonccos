@@ -1,9 +1,20 @@
 $(document).ready(function(){
-	$("#registrarse").click(function(event) {
+	$("#saveCliente").submit(function(event) {
+		event.preventDefault();
+		var $form = $(this),
+		nombre = $form.find( "input[name='nombre']" ).val(),
+		paterno = $form.find( "input[name='paterno']" ).val(),
+		materno = $form.find( "input[name='materno']" ).val(),
+		dni = $form.find( "input[name='dni']" ).val(),
+		email = $form.find( "input[name='email']" ).val(),
+		pass = $form.find( "input[name='pass']" ).val(),
+	    url = $form.attr( "action" );
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
-            url: "restaurant",
-            data: {"rest": "registrarse"},
+            url: url,
+            data: {"nombre": nombre, "paterno": paterno,"materno": materno,"dni": dni,
+            	"email": email,"pass": pass},
             success: function(data){
             	$("#cuerpo").html(data);
             }
