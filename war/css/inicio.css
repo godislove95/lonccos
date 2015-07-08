@@ -17,6 +17,9 @@ body {
 	width: 10%;
 	display: inline-block;
 }
+.menu:hover {
+    cursor: pointer;
+}
 #cuerpo {
 	padding-top: 4px;
 	padding-bottom: 4px;
