@@ -55,6 +55,10 @@ public class RestaurantServlet extends HttpServlet {
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/registrarse.jsp");
 				break;
 				
+			case "salir":
+				mandar=getServletContext().getRequestDispatcher("/salirSesion");
+				break;
+				
 			default :
 			 	mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/inicio.jsp");	
 			break;

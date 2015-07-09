@@ -105,4 +105,14 @@ $(document).ready(function(){
             }
         });
 	});
+	$("#salir").click(function(event) {
+		$.ajax({
+            type: "POST",
+            url: "restaurant",
+            data: {"rest": "salir"},
+            success: function(data){
+            	$("#cuerpo").html(data);
+            }
+        });
+	});
 });

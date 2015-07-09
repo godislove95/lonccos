@@ -49,13 +49,22 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/iniciarSesion</url-pattern>
 	</servlet-mapping>
 	
-		<servlet>
+	<servlet>
 		<servlet-name>MenuServlet</servlet-name>
 		<servlet-class>pw.MenuServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>MenuServlet</servlet-name>
 		<url-pattern>/menuServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SalirSesion</servlet-name>
+		<servlet-class>pw.SalirSesion</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SalirSesion</servlet-name>
+		<url-pattern>/salirSesion</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>

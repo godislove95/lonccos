@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="pw.*"%>    
+<%@ page import="pw.*"%>
+<%@ page import="javax.servlet.http.*"%>        
 <%	//Cliente cliente = (Cliente) session.getAttribute("usuario");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,12 +21,19 @@
 		<img class="menu" id="locales" alt="locales" src="img/locales.png">
 		<img class="menu" id="eventos" alt="eventos" src="img/eventos.png">
 		<img class="menu" id="reservas" alt="reservas" src="img/reservas.png">
+		<% if(session.getAttribute("usuario") == null){%>
 		<img class="menu" id="ingresar" alt="ingresar" src="img/ingresar.png">
+		<% }else {%>
+		<img class="menu" id="salir" alt="salir" src="img/salir.png">
+		<% }%>
 	</div>
 	<div id="titulo">
 		<br><br><br>
-		<p id="sesion">Bienvenido
-		<br>${sessionScope.usuario}</p>
+		<% if(session.getAttribute("usuario") != null){%>
+		<p id="sesion"> Bienvenido <br>
+		<% out.print(session.getAttribute("usuario"));%> 
+		</p>
+		<% }%>
 	</div>
 	<div id="cuerpo">
 	</div>

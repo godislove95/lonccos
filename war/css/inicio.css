@@ -1,5 +1,6 @@
 body {
 	font-family: Comic Sans MS, Arial;
+	cursor: url(http://cur.cursors-4u.net/smilies/smi-3/smi267.png), auto;
 }
 #titulo {
 	padding-top: 4px;
@@ -45,7 +46,7 @@ body {
 }
 
 .menu:hover {
-    cursor: pointer;
+    cursor: url(http://cur.cursors-4u.net/smilies/smi-3/smi266.png), auto;
 }
 
 #cuerpo {
