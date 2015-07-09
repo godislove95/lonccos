@@ -33,28 +33,7 @@
 			<div class="Cell"><h3>IMAGEN</h3></div>
 		</div>
 
-		<%for(Plato p: registro){%>
-		<% if(p.getTipo().equals("Entrada")) %>
-		<div class="Heading">
-			
-			<div class="Cell">
-				<% out.println(p.getNombre()); %>
-			</div>
-
-			<div class="Cell">
-				<% out.println(p.getPrecio()); %>
-			</div>
-			
-			<div class="Cell">
-				<% out.println(p.getDescripcion()); %>
-			</div>
-			
-			<div class="Cell">
-				<% out.println(p.getImagen());%>
-			</div>
-
-		</div>
-		<% }%>
+		
 	</div>
 </body>
 </html>

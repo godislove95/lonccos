@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="pw.*"%>    
+<%	//Cliente cliente = (Cliente) session.getAttribute("usuario");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,9 +21,11 @@
 		<img class="menu" id="eventos" alt="eventos" src="img/eventos.png">
 		<img class="menu" id="reservas" alt="reservas" src="img/reservas.png">
 		<img class="menu" id="ingresar" alt="ingresar" src="img/ingresar.png">
-		<div id="titulo">
-			<img id="titulo_logo" alt="titulo_logo" src="img/titulo_logo.png">
-		</div>
+	</div>
+	<div id="titulo">
+		<br><br><br>
+		<p id="sesion">Bienvenido
+		<br>${sessionScope.usuario}</p>
 	</div>
 	<div id="cuerpo">
 	</div>

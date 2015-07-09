@@ -12,7 +12,7 @@ public class RestaurantServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {
 		RequestDispatcher mandar = null ;
-			
+		
 			String rest=req.getParameter("rest");
 			switch (rest){
 			case "inicio":

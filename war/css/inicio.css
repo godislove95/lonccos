@@ -1,7 +1,22 @@
 body {
-	
+	font-family: Comic Sans MS, Arial;
 }
-
+#titulo {
+	padding-top: 4px;
+	border-radius: 10px;
+	background-image: url("../img/titulo_logo.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 66.5%;
+	height: 270px;
+	margin: auto;
+	text-align: left;
+	margin-bottom: 5px;
+}
+.cambio {
+	width: 100%;
+	border-radius: 10px;
+}
 #titulo_logo {
 	width: 80%;
 	margin-bottom: 10px;

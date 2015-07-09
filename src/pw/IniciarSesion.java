@@ -16,6 +16,7 @@ public class IniciarSesion extends HttpServlet {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		Query q = pm.newQuery(Cliente.class);
 		RequestDispatcher mandar = null ;
+		HttpSession sesion = req.getSession();
 		String email = req.getParameter("email");
 		String pass = req.getParameter("pass");
 		
@@ -32,7 +33,11 @@ public class IniciarSesion extends HttpServlet {
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/passIncorrecto.jsp");
 			}
 			else {
-				req.setAttribute("lista", cliente);
+				String login = cliente.get(0).getEmail() + "<br>"
+						+ cliente.get(0).getNombre().toUpperCase() + " "
+						+ cliente.get(0).getPaterno().toUpperCase() + "<br>"
+						+ cliente.get(0).getDni();
+				sesion.setAttribute("usuario", login);
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
 			}
 		}catch(Exception e){

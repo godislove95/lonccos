@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	
 	var i = 0;
 	function slider(){
 		switch (i % 3) {

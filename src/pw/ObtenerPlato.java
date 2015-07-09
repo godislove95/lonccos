@@ -30,7 +30,7 @@ public class ObtenerPlato extends HttpServlet{
 				List<Plato> plato = (List<Plato>) q.execute();
 				req.setAttribute("lista", plato);
 				System.out.println("good");
-				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/registroPlato.jsp");
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/ObtenerPlato.jsp");
 				rd.forward(req, resp);
 			}catch(Exception e){
 				System.out.println("  ");

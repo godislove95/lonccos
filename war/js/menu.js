@@ -1,9 +1,10 @@
 $(document).ready(function(){
 	$("#Entrada").click(function(event) {
+		
 		$.ajax({
             type: "POST",
-            url: "restaurant",
-            data: {"rest": "inicio"},
+            url: "/menuServlet",
+            data: {"rest": "entrada"},
             success: function(data){
             	$("#cuerpo").html(data);
             }
@@ -12,8 +13,8 @@ $(document).ready(function(){
 	$("#Sopa").click(function(event) {
 		$.ajax({
             type: "POST",
-            url: "restaurant",
-            data: {"rest": "nosotros"},
+            url: "/menuServlet",
+            data: {"rest": "sopa"},
             success: function(data){
             	$("#cuerpo").html(data);
             }
