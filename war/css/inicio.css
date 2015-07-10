@@ -2,6 +2,12 @@ body {
 	font-family: Comic Sans MS, Arial;
 	cursor: url(http://cur.cursors-4u.net/smilies/smi-3/smi267.png), auto;
 }
+#sesion {
+	background-color: #B5954A;
+	width: 200px;
+	text-align: center;
+	border-radius: 10px;
+}
 #titulo {
 	padding-top: 4px;
 	border-radius: 10px;
@@ -15,7 +21,7 @@ body {
 	margin-bottom: 5px;
 }
 .cambio {
-	width: 100%;
+	width: 99%;
 	border-radius: 10px;
 }
 #titulo_logo {
@@ -80,4 +86,9 @@ body {
 
 #cargando {
 	width: 30%;
+}
+#exito {
+	margin-top: 5%;
+	width: 10%;
+	margin-bottom: 5%;
 }

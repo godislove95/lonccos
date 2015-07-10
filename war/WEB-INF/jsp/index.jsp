@@ -28,11 +28,12 @@
 		<% }%>
 	</div>
 	<div id="titulo">
-		<br><br><br>
+		<br><br><br><br>
 		<% if(session.getAttribute("usuario") != null){%>
-		<p id="sesion"> Bienvenido <br>
+		<div id="sesion">
+		<b>Bienvenido</b><br>
 		<% out.print(session.getAttribute("usuario"));%> 
-		</p>
+		</div>
 		<% }%>
 	</div>
 	<div id="cuerpo">

@@ -11,7 +11,6 @@
 </head>
 <body>
 	<img id="exito" alt="exito" src="img/exito.gif">
-	<p>Bienvenido <br> ${sessionScope.usuario}</p>
 	<p id="contador">Direccionando</p>
 </body>
 </html>
