@@ -23,9 +23,9 @@ public class ObtenerClientes extends HttpServlet{
 			throws ServletException, IOException {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 			try{
-				Query q = pm.newQuery(Cliente.class);
+				Query q = pm.newQuery(Usuario.class);
 				@SuppressWarnings("unchecked")
-				List<Cliente> cliente = (List<Cliente>) q.execute();
+				List<Usuario> cliente = (List<Usuario>) q.execute();
 				req.setAttribute("lista", cliente);
 				System.out.println("good");
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/registroClientes.jsp");

@@ -2,11 +2,23 @@ body {
 	font-family: Comic Sans MS, Arial;
 	cursor: url(../img/mouse1.png), auto;
 }
+#menu_control {
+	text-align: center;
+	float: right;
+}
+.menu_Usuario {
+	margin-bottom: 5px;
+	background-color: #B5954A;
+	width: 250px;
+	text-align: center;
+	border-radius: 10px;
+}
 #sesion {
 	background-color: #B5954A;
 	width: 200px;
 	text-align: center;
 	border-radius: 10px;
+	float: left;
 }
 #titulo {
 	padding-top: 4px;
@@ -17,7 +29,6 @@ body {
 	width: 66.5%;
 	height: 270px;
 	margin: auto;
-	text-align: left;
 	margin-bottom: 5px;
 }
 .cambio {

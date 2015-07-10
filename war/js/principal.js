@@ -16,6 +16,79 @@ $(document).ready(function(){
 		i++;
 	}
 	setInterval(function(){slider()}, 4000);
+	
+	$("#cambiar_Pass").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "restaurant",
+            data: {"rest": "inicio"},
+            success: function(data){
+            	$("#cuerpo").html("Cambiar Contraseña");
+            }
+        });
+	});
+	
+	$("#cambiar_Nombre").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "restaurant",
+            data: {"rest": "inicio"},
+            success: function(data){
+            	$("#cuerpo").html("Cambiar Nombre");
+            }
+        });
+	});
+	
+	$("#cambiar_Paterno").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "restaurant",
+            data: {"rest": "inicio"},
+            success: function(data){
+            	$("#cuerpo").html("Cambiar Apellido Paterno");
+            }
+        });
+	});
+	
+	$("#cambiar_Materno").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "restaurant",
+            data: {"rest": "inicio"},
+            success: function(data){
+            	$("#cuerpo").html("Cambiar Apellido Materno");
+            }
+        });
+	});
+	
+	$("#menu_Usuario").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "restaurant",
+            data: {"rest": "inicio"},
+            success: function(data){
+            	$("#cuerpo").html("Cambiar Apellido Materno");
+            }
+        });
+	});
+	
+	$("#sesionAdmin").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "restaurant",
+            data: {"rest": "inicio"},
+            success: function(data){
+            	$("#cuerpo").html("Administrador");
+            }
+        });
+	});
+	
 	$.ajax({
         type: "POST",
         url: "restaurant",

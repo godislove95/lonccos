@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="pw.*"%>
+<%@ page import="javax.servlet.http.*;"%>        
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,6 +23,7 @@
 </script>
 </head>
 <body>
+	<% if(session.getAttribute("email") != null){%>
 	<div id="cero">
 	<h2>Reservar Mesa</h2>
 	<form action="saveReserva" method="post" onsubmit="return validar();">
@@ -87,5 +90,8 @@
 		</div>
 	</form>
 	</div>
+	<%} else {%>
+		<b>Necesita Registrarse</b>
+	<%}%>
 </body>
 </html>

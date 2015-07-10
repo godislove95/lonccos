@@ -12,8 +12,8 @@ public class SalirSesion extends HttpServlet {
 		RequestDispatcher mandar = null ;
 
         HttpSession session = req.getSession(false);
-        session.setAttribute("usuario", null);
-        if(session.getAttribute("usuario") == null){  
+        session.setAttribute("email", null);
+        if(session.getAttribute("email") == null){  
         	mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
         }
         else{    

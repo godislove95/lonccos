@@ -6,7 +6,7 @@ import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
-public class Cliente {
+public class Usuario {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	
@@ -26,9 +26,12 @@ public class Cliente {
 	
 	@Persistent
 	private String pass;
+	
+	@Persistent
+	private int admin;
 
-	public Cliente(String email, String nombre, String paterno, String materno,
-			int dni, String pass) {
+	public Usuario(String email, String nombre, String paterno, String materno,
+			int dni, String pass, int admin) {
 		super();
 		this.email = email;
 		this.nombre = nombre;
@@ -36,12 +39,17 @@ public class Cliente {
 		this.materno = materno;
 		this.dni = dni;
 		this.pass = pass;
+		this.admin = admin;
 	}
 
 	public String getEmail() {
 		return email;
 	}
-	
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -82,13 +90,19 @@ public class Cliente {
 		this.pass = pass;
 	}
 
+	public int getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(int admin) {
+		this.admin = admin;
+	}
+
 	@Override
 	public String toString() {
-		return "Cliente [email=" + email + ", nombre=" + nombre + ", paterno="
+		return "Usuario [email=" + email + ", nombre=" + nombre + ", paterno="
 				+ paterno + ", materno=" + materno + ", dni=" + dni + ", pass="
-				+ pass + "]";
+				+ pass + ", admin=" + admin + "]";
 	}
-	
-	
 
 }

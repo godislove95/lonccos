@@ -21,18 +21,35 @@
 		<img class="menu" id="locales" alt="locales" src="img/locales.png">
 		<img class="menu" id="eventos" alt="eventos" src="img/eventos.png">
 		<img class="menu" id="reservas" alt="reservas" src="img/reservas.png">
-		<% if(session.getAttribute("usuario") == null){%>
+		<% if(session.getAttribute("email") == null){%>
 		<img class="menu" id="ingresar" alt="ingresar" src="img/ingresar.png">
 		<% }else {%>
 		<img class="menu" id="salir" alt="salir" src="img/salir.png">
 		<% }%>
 	</div>
 	<div id="titulo">
-		<br><br><br><br>
-		<% if(session.getAttribute("usuario") != null){%>
+		<br><br><br>
+		<% if(session.getAttribute("email") != null){%>
 		<div id="sesion">
 		<b>Bienvenido</b><br>
-		<% out.print(session.getAttribute("usuario"));%> 
+		<% out.print(session.getAttribute("email"));%><br>
+		<% out.print(session.getAttribute("nombre")+" ");%>
+		<% out.print(session.getAttribute("paterno"));%>
+		<% if (session.getAttribute("admin").equals("0")){%><br>
+			<b>Cliente</b><br>
+		<% }%>
+		<% if (session.getAttribute("admin").equals("1")){%><br>
+			<b>Administrador</b><br>
+		<% }%>
+		</div>
+		<div id="menu_control">
+		<% if (session.getAttribute("admin").equals("1")){%>
+			<div class="menu_Usuario" id="sesionAdmin">MENU ADMINISTRADOR</div>
+		<% }%>
+			<div class="menu_Usuario" id="cambiar_Pass">Cambiar Contraseña</div>
+			<div class="menu_Usuario" id="cambiar_Nombre">Cambiar Nombre</div>
+			<div class="menu_Usuario" id="cambiar_Paterno">Cambiar Apellido Paterno</div>
+			<div class="menu_Usuario" id="cambiar_Materno">Cambiar Apellido Materno</div>
 		</div>
 		<% }%>
 	</div>

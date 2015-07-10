@@ -19,7 +19,7 @@ public class SaveCliente extends HttpServlet {
 		int dni = Integer.parseInt(req.getParameter("dni"));
 		String pass =req.getParameter("pass");
 		
-		Cliente registro= new Cliente(email, nombre, paterno, materno, dni, pass);
+		Usuario registro= new Usuario(email, nombre, paterno, materno, dni, pass, 0);
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try{

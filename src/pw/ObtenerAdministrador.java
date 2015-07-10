@@ -25,7 +25,7 @@ public class ObtenerAdministrador extends HttpServlet{
 	
 
 			try{
-				Query q = pm.newQuery(Cliente.class);
+				Query q = pm.newQuery(Usuario.class);
 				@SuppressWarnings("unchecked")
 				List<Administrador> admin = (List<Administrador>) q.execute();
 				req.setAttribute("lista", admin);
