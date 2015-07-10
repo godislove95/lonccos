@@ -1,6 +1,6 @@
 body {
 	font-family: Comic Sans MS, Arial;
-	cursor: url(http://cur.cursors-4u.net/smilies/smi-3/smi267.png), auto;
+	cursor: url(../img/mouse1.png), auto;
 }
 #sesion {
 	background-color: #B5954A;
@@ -52,7 +52,7 @@ body {
 }
 
 .menu:hover {
-    cursor: url(http://cur.cursors-4u.net/smilies/smi-3/smi266.png), auto;
+    cursor: url(../img/mouse2.png), auto;
 }
 
 #cuerpo {

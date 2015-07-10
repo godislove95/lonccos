@@ -64,9 +64,9 @@ div#registro input.segundo[type=submit]{
 }
 div#registro input.primero[type=submit]:hover{
 	background:red;
-	cursor:pointer;
+	cursor: url(../img/mouse2.png), auto;
 }
 div#registro input.segundo[type=submit]:hover{
 	background:#0040ff;
-	cursor:pointer;
+	cursor: url(../img/mouse2.png), auto;
 }

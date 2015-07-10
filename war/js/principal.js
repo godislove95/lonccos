@@ -26,6 +26,7 @@ $(document).ready(function(){
     });
 	// Attach a submit handler to the form
 	$("#inicio").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "restaurant",
@@ -36,6 +37,7 @@ $(document).ready(function(){
         });
 	});
 	$("#nosotros").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "restaurant",
@@ -46,6 +48,7 @@ $(document).ready(function(){
         });
 	});
 	$("#menu").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "restaurant",
@@ -56,6 +59,7 @@ $(document).ready(function(){
         });
 	});
 	$("#ofertas").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "restaurant",
@@ -66,6 +70,7 @@ $(document).ready(function(){
         });
 	});
 	$("#locales").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "restaurant",
@@ -76,6 +81,7 @@ $(document).ready(function(){
         });
 	});
 	$("#eventos").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "restaurant",
@@ -86,6 +92,7 @@ $(document).ready(function(){
         });
 	});
 	$("#reservas").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "restaurant",
@@ -96,6 +103,7 @@ $(document).ready(function(){
         });
 	});
 	$("#ingresar").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "restaurant",
@@ -106,6 +114,7 @@ $(document).ready(function(){
         });
 	});
 	$("#salir").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "restaurant",
