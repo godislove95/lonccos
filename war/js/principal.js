@@ -72,7 +72,31 @@ $(document).ready(function(){
             url: "restaurant",
             data: {"rest": "inicio"},
             success: function(data){
-            	$("#cuerpo").html("Cambiar Apellido Materno");
+            	$("#cuerpo").html("Menu Admin");
+            }
+        });
+	});
+	
+	$("#misReservas").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "cambio",
+            data: {"rest": "misReservas"},
+            success: function(data){
+            	$("#cuerpo").html(data);
+            }
+        });
+	});
+	
+	$("#eliminarReservas").click(function(event) {
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "restaurant",
+            data: {"rest": "eliminarReservas"},
+            success: function(data){
+            	$("#cuerpo").html(data);
             }
         });
 	});

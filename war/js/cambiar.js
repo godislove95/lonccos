@@ -65,4 +65,19 @@ $(document).ready(function(){
             }
         });
 	});
+	$("#eliminarReserva").submit(function(event) {
+		event.preventDefault();
+		var $form = $(this),
+		idReserva = $form.find( "input[name='idReserva']" ).val(),
+	    url = $form.attr( "action" );
+		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "post",
+            url: url,
+            data: {"rest": "eliminarReserva","idReserva": idReserva},
+            success: function(data){
+            	$("#cuerpo").html(data);
+            }
+        });
+	});
 });

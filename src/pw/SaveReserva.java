@@ -1,6 +1,7 @@
 package pw;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -11,14 +12,14 @@ import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
 public class SaveReserva extends HttpServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {
 		RequestDispatcher mandar = null ;
 		HttpSession session = req.getSession();
 		String hora = req.getParameter("hora");
 		String numero = req.getParameter("numero");
 		String lugar = req.getParameter("lugar");
-		String zona = "EXCLUSIVA";
+		String zona = "preferencial";
 		String tipo= req.getParameter("tipo");
 		String fecha =req.getParameter("fecha");
 		PersistenceManager pm = PMF.get().getPersistenceManager();
@@ -26,24 +27,12 @@ public class SaveReserva extends HttpServlet {
 		q.setFilter("email == emailParam");
 		q.declareParameters("String emailParam");
 		@SuppressWarnings("unchecked")
-		List<Usuario> cliente= (List<Usuario>)q.execute("deyby_57@hotmail.com");
+		List<Usuario> cliente= (List<Usuario>)q.execute(session.getAttribute("email"));
 		try{
-			if(cliente.get(0).getReservas().size() == 0){
-				System.out.println("!>>>");
-				Reserva r = new Reserva( 1, hora, numero, lugar, zona, fecha, tipo);
-				System.out.println("!>");
-				cliente.get(0).getReservas().add(r);
-				System.out.println("!>>>");
-			}
-			else
-				if(cliente.size() != 0){
-					System.out.println("!");
-					int l = cliente.get(0).getReservas().size();
-					Reserva r = new Reserva( ++l , hora, numero, lugar, zona, fecha, tipo);
-					cliente.get(0).getReservas().add(r);
-					System.out.println("?");
-				}
+			Reserva r = new Reserva(hora, numero, lugar, zona, fecha, tipo);
+			cliente.get(0).getReservas().add(r);
 			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
+			System.out.println(cliente.get(0).reservas.size());
 			
 		}catch(Exception e){
 			System.out.println(e);

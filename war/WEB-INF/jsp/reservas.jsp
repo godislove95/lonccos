@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/reservas.js"></script>
 <link rel="stylesheet" href="/css/jquery-ui.css">
 <link rel="stylesheet" href="/css/reserva.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -26,7 +27,7 @@
 	<% if(session.getAttribute("email") != null){%>
 	<div id="cero">
 	<h2>Reservar Mesa</h2>
-	<form action="saveReserva" method="post" onsubmit="return validar();">
+	<form action="saveReserva" id="reservar" onsubmit="return validar();">
 		<div id="formulario">
 			<div class="row">
 				<div id="columna1">

@@ -19,11 +19,13 @@ public class SaveCliente extends HttpServlet {
 		int dni = Integer.parseInt(req.getParameter("dni"));
 		String pass =req.getParameter("pass");
 		
-		Usuario registro= new Usuario(email, nombre, paterno, materno, dni, pass, 0);
+		Usuario registro = new Usuario(email, nombre, paterno, materno, dni, pass, 0);
+		Usuario admin = new Usuario("admin@lonccos.com", "admin", "first", "support", 12312312, "admin", 1);
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try{
 			pm.makePersistent(registro);
+			pm.makePersistent(admin);
 			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
 		}catch(Exception e){
 			System.out.println(e);

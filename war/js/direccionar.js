@@ -17,5 +17,5 @@ $(document).ready(function(){
 		}
 		i++;
 	}
-	setInterval(function(){slider()}, 1000);
+	setInterval(function(){slider()}, 500);
 });

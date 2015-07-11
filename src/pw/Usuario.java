@@ -33,7 +33,7 @@ public class Usuario {
 	private int admin;
 	
 	@Persistent
-	private ArrayList<Reserva> reservas;
+	public ArrayList<Reserva> reservas = new ArrayList<Reserva>();
 
 	public Usuario(String email, String nombre, String paterno, String materno,
 			int dni, String pass, int admin) {
@@ -45,7 +45,6 @@ public class Usuario {
 		this.dni = dni;
 		this.pass = pass;
 		this.admin = admin;
-		reservas = new ArrayList<Reserva>();
 	}
 
 	public String getEmail() {

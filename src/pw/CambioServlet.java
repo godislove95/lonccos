@@ -31,8 +31,7 @@ public class CambioServlet extends HttpServlet {
 					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/passIncorrecto.jsp");
 				else{
 					cliente.get(0).setPass(nuevoPass1);
-					session = req.getSession(false);
-					session.setAttribute("email", null);
+					session.setAttribute("pass", nuevoPass1);
 					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
 				}
 				break;
@@ -40,25 +39,43 @@ public class CambioServlet extends HttpServlet {
 			case "cambiarMaterno":
 				String materno = req.getParameter("materno");
 				cliente.get(0).setMaterno(materno);
-				session = req.getSession(false);
-				session.setAttribute("email", null);
+				session.setAttribute("materno", materno);
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
 				break;
 			
 			case "cambiarNombre":
 				String nombre = req.getParameter("nombre");
 				cliente.get(0).setNombre(nombre);
-				session = req.getSession(false);
-				session.setAttribute("nombre", null);
+				session.setAttribute("nombre", nombre);
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
 				break;
 				
 			case "cambiarPaterno":
 				String paterno = req.getParameter("paterno");
 				cliente.get(0).setPaterno(paterno);
-				session = req.getSession(false);
-				session.setAttribute("email", null);
+				session.setAttribute("paterno", paterno);
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
+				break;
+				
+			case "misReservas":
+				req.setAttribute("lista", cliente.get(0).getReservas());
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/mostrarReservas.jsp");
+				break;
+				
+			case "eliminarReserva":
+				String idReserva = req.getParameter("idReserva");
+				String correct;
+				for(Reserva p : cliente.get(0).getReservas()){
+					correct = "" + p.getKey().getId();
+					if(correct.equals(idReserva)){
+						cliente.get(0).getReservas().remove(p);
+						mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
+						req.setAttribute("lista", cliente.get(0).getReservas());
+						mandar.forward(req, resp);
+						return;
+					}
+				}
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/noExisteReserva.jsp");
 				break;
 				
 			default :

@@ -3,14 +3,16 @@ package pw;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
-//import javax.jdo.annotations.PrimaryKey;
 import javax.jdo.annotations.PrimaryKey;
+
+import com.google.appengine.api.datastore.Key;
 
 @PersistenceCapable
 public class Reserva {
+
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private int codigo;
+	private Key key;
 	
 	@Persistent
 	private String hora;
@@ -30,10 +32,8 @@ public class Reserva {
 	@Persistent
 	private String tipo;
 
-	public Reserva(int codigo, String hora, String numero, String lugar,
+	public Reserva(String hora, String numero, String lugar,
 			String zona, String fecha, String tipo) {
-		super();
-		this.codigo = codigo;
 		this.hora = hora;
 		this.numero = numero;
 		this.lugar = lugar;
@@ -42,10 +42,6 @@ public class Reserva {
 		this.tipo = tipo;
 	}
 
-	public int getCodigo() {
-		return codigo;
-	}
-	
 	public String getHora() {
 		return hora;
 	}
@@ -89,6 +85,10 @@ public class Reserva {
 	public String getTipo() {
 		return tipo;
 	}
+	
+	public Key getKey() {
+		return key;
+	}
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
@@ -96,7 +96,7 @@ public class Reserva {
 
 	@Override
 	public String toString() {
-		return "Reserva [codigo=" + codigo + ", hora=" + hora + ", numero="
+		return "Reserva [codigo=" + key + ", hora=" + hora + ", numero="
 				+ numero + ", lugar=" + lugar + ", zona=" + zona + ", fecha="
 				+ fecha + ", tipo=" + tipo + "]";
 	}

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="pw.*"%>
-<%@ page import="javax.servlet.http.*;"%>        
+<%@ page import="javax.servlet.http.*;"%>   
 <%	//Cliente cliente = (Cliente) session.getAttribute("usuario");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -52,12 +52,15 @@
 			<div class="menu_Usuario" id="cambiar_Nombre">Cambiar Nombre</div>
 			<div class="menu_Usuario" id="cambiar_Paterno">Cambiar Apellido Paterno</div>
 			<div class="menu_Usuario" id="cambiar_Materno">Cambiar Apellido Materno</div>
+			<div class="menu_Usuario" id="misReservas">Mis Reservas</div>
+			<div class="menu_Usuario" id="eliminarReservas">Eliminar Reserva</div>
 		</div>
 		<% }%>
 	</div>
 	<div id="cuerpo">
 	</div>
 	<div id="pie">
+		<img id="proceso" alt="proceso" src="img/proceso.gif">
 		<p id="pie_text">Copyright © Lonccos<br>
 		Restaurant Lonccos<br>
 		Derechos Reservados</p>

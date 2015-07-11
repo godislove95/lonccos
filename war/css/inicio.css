@@ -2,6 +2,14 @@ body {
 	font-family: Comic Sans MS, Arial;
 	cursor: url(../img/mouse1.png), auto;
 }
+.relacion {
+	margin: auto;
+	width: 600px;
+	text-align: center;
+	background: #DEAA87;
+	cursor: url(../img/mouse2.png), auto;
+	border-radius: 10px;
+}
 #menu_control {
 	text-align: center;
 	float: right;
@@ -9,16 +17,31 @@ body {
 .menu_Usuario {
 	margin-bottom: 5px;
 	background-color: #B5954A;
-	width: 250px;
+	width: 230px;
 	text-align: center;
 	border-radius: 10px;
 }
+.menu_Usuario:hover {
+	color : white;
+	background-color: black;
+	cursor: url(../img/mouse2.png), auto;
+}
 #sesion {
 	background-color: #B5954A;
-	width: 200px;
+	width: 230px;
 	text-align: center;
 	border-radius: 10px;
 	float: left;
+}
+#proceso {
+	margin-right: 5px;
+	width: 230px;
+	float: right;
+}
+#sesion:hover {
+	color : red;
+	background-color: black;
+	cursor: url(../img/mouse2.png), auto;
 }
 #titulo {
 	padding-top: 4px;
@@ -92,7 +115,10 @@ body {
 }
 
 #pie_text {
+	margin-left: 5px;
+	text-align: left;
 	font-family: Comic Sans MS, Arial;
+	float: left;
 }
 
 #cargando {
