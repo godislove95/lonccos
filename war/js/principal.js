@@ -22,9 +22,9 @@ $(document).ready(function(){
 		$.ajax({
             type: "POST",
             url: "restaurant",
-            data: {"rest": "inicio"},
+            data: {"rest": "cambiar_Pass"},
             success: function(data){
-            	$("#cuerpo").html("Cambiar Contraseña");
+            	$("#cuerpo").html(data);
             }
         });
 	});
@@ -34,9 +34,9 @@ $(document).ready(function(){
 		$.ajax({
             type: "POST",
             url: "restaurant",
-            data: {"rest": "inicio"},
+            data: {"rest": "cambiar_Nombre"},
             success: function(data){
-            	$("#cuerpo").html("Cambiar Nombre");
+            	$("#cuerpo").html(data);
             }
         });
 	});
@@ -46,9 +46,9 @@ $(document).ready(function(){
 		$.ajax({
             type: "POST",
             url: "restaurant",
-            data: {"rest": "inicio"},
+            data: {"rest": "cambiar_Paterno"},
             success: function(data){
-            	$("#cuerpo").html("Cambiar Apellido Paterno");
+            	$("#cuerpo").html(data);
             }
         });
 	});
@@ -58,9 +58,9 @@ $(document).ready(function(){
 		$.ajax({
             type: "POST",
             url: "restaurant",
-            data: {"rest": "inicio"},
+            data: {"rest": "cambiar_Materno"},
             success: function(data){
-            	$("#cuerpo").html("Cambiar Apellido Materno");
+            	$("#cuerpo").html(data);
             }
         });
 	});

@@ -1,6 +1,5 @@
 package pw;
 
-import java.util.*;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -57,6 +56,22 @@ public class RestaurantServlet extends HttpServlet {
 				
 			case "salir":
 				mandar=getServletContext().getRequestDispatcher("/salirSesion");
+				break;
+				
+			case "cambiar_Pass":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/cambiar_Pass.jsp");
+				break;
+				
+			case "cambiar_Paterno":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/cambiar_Paterno.jsp");
+				break;
+				
+			case "cambiar_Nombre":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/cambiar_Nombre.jsp");
+				break;
+				
+			case "cambiar_Materno":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/cambiar_Materno.jsp");
 				break;
 				
 			default :

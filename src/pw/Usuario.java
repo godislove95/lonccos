@@ -1,5 +1,7 @@
 package pw;
 
+import java.util.ArrayList;
+
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -29,6 +31,9 @@ public class Usuario {
 	
 	@Persistent
 	private int admin;
+	
+	@Persistent
+	private ArrayList<Reserva> reservas;
 
 	public Usuario(String email, String nombre, String paterno, String materno,
 			int dni, String pass, int admin) {
@@ -40,14 +45,11 @@ public class Usuario {
 		this.dni = dni;
 		this.pass = pass;
 		this.admin = admin;
+		reservas = new ArrayList<Reserva>();
 	}
 
 	public String getEmail() {
 		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getNombre() {
@@ -98,11 +100,22 @@ public class Usuario {
 		this.admin = admin;
 	}
 
+	public ArrayList<Reserva> getReservas() {
+		return reservas;
+	}
+
+	public void setReservas(ArrayList<Reserva> reservas) {
+		this.reservas = reservas;
+	}
+	
+	public void anadir(Reserva r) {
+		reservas.add(r);
+	}
+
 	@Override
 	public String toString() {
 		return "Usuario [email=" + email + ", nombre=" + nombre + ", paterno="
 				+ paterno + ", materno=" + materno + ", dni=" + dni + ", pass="
-				+ pass + ", admin=" + admin + "]";
+				+ pass + ", admin=" + admin + ", reservas=" + reservas + "]";
 	}
-
 }

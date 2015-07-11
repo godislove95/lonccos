@@ -33,9 +33,9 @@
 					<p>LUGAR DE RESERVA</p>
 				</div>
 				<div id="columna2"><p>
-					<input type="radio" name="local" value="yanahuara">YANAHUARA<br>
-					<input type="radio" name="local"value="sachaca">SACHACA<br>
-					<input type="radio"name="local" value="socabaya">SOCABAYA
+					<input type="radio" name="lugar" value="yanahuara">YANAHUARA<br>
+					<input type="radio" name="lugar"value="sachaca">SACHACA<br>
+					<input type="radio"name="lugar" value="socabaya">SOCABAYA
 					</p>
 				</div>
 			</div>
@@ -44,9 +44,9 @@
 					<p>ZONA</p>
 				</div>
 				<div id="columna2"><p>
-					<input type="radio" name="zona" value="publico">PUBLICO <br>
-					<input type="radio" name="zona" value="intermedio">INTERMEDIO<br>
-						<input type="radio" name="zona" value="exclusivo">EXCLUSIVO
+					<input type="radio" name="tipo" value="publico">PUBLICO <br>
+					<input type="radio" name="tipo" value="intermedio">INTERMEDIO<br>
+						<input type="radio" name="tipo" value="exclusivo">EXCLUSIVO
 					</p>
 				</div>
 			</div>
@@ -81,7 +81,7 @@
 								<option value="6">6 pm</option>
 								<option value="7">7 pm</option>
 						</select><br> 
-						<input type="text" id="datepicker" name="date" placeholder="mes/dia/año"/><br>
+						<input type="text" id="datepicker" name="fecha" placeholder="mes/dia/año"/><br>
 						
 					</div>
 			</div>

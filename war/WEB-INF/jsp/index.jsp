@@ -31,10 +31,12 @@
 		<br><br><br>
 		<% if(session.getAttribute("email") != null){%>
 		<div id="sesion">
-		<b>Bienvenido</b><br>
+		<b>Bienvenido</b>
+		<% //out.print(session.getAttribute("pass"));%><br>
 		<% out.print(session.getAttribute("email"));%><br>
-		<% out.print(session.getAttribute("nombre")+" ");%>
-		<% out.print(session.getAttribute("paterno"));%>
+		<% out.print(session.getAttribute("nombre"));%>
+		<% out.print(session.getAttribute("paterno")+" ");%>
+		<% out.print(session.getAttribute("materno"));%>
 		<% if (session.getAttribute("admin").equals("0")){%><br>
 			<b>Cliente</b><br>
 		<% }%>

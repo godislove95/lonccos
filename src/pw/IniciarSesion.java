@@ -33,6 +33,7 @@ public class IniciarSesion extends HttpServlet {
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/passIncorrecto.jsp");
 			}
 			else {
+				sesion.setAttribute("pass", cliente.get(0).getPass());
 				sesion.setAttribute("email", cliente.get(0).getEmail());
 				sesion.setAttribute("nombre", cliente.get(0).getNombre());
 				sesion.setAttribute("paterno", cliente.get(0).getPaterno());
