@@ -24,7 +24,7 @@
 </script>
 </head>
 <body>
-	<% if(session.getAttribute("email") != null){%>
+	<% if(session.getAttribute("email") != null && !session.getAttribute("admin").equals("2")){%>
 	<div id="cero">
 	<h2>Reservar Mesa</h2>
 	<form action="saveReserva" id="reservar" onsubmit="return validar();">
@@ -92,7 +92,12 @@
 	</form>
 	</div>
 	<%} else {%>
+		<%if(session.getAttribute("admin").equals("2")){%>
+			<b>Usted es administrador</b>
+			<b>No puede reservar</b>
+		<%} else {%>
 		<b>Necesita Registrarse</b>
+		<%}%>
 	<%}%>
 </body>
 </html>

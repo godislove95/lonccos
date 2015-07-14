@@ -23,12 +23,21 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>SaveCliente</servlet-name>
-		<servlet-class>pw.SaveCliente</servlet-class>
+		<servlet-name>SaveAdmin</servlet-name>
+		<servlet-class>pw.SaveAdmin</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>SaveCliente</servlet-name>
-		<url-pattern>/saveCliente</url-pattern>
+		<servlet-name>SaveAdmin</servlet-name>
+		<url-pattern>/saveAdmin</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SaveUsuario</servlet-name>
+		<servlet-class>pw.SaveUsuario</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SaveUsuario</servlet-name>
+		<url-pattern>/saveUsuario</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -83,6 +92,24 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>SaveReserva</servlet-name>
 		<url-pattern>/saveReserva</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Administrador</servlet-name>
+		<servlet-class>pw.Administrador</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Administrador</servlet-name>
+		<url-pattern>/administrador</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AccionAdministrador</servlet-name>
+		<servlet-class>pw.AccionAdministrador</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccionAdministrador</servlet-name>
+		<url-pattern>/accionAdministrador</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>

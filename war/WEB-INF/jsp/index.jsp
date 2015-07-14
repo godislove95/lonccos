@@ -43,17 +43,22 @@
 		<% if (session.getAttribute("admin").equals("1")){%><br>
 			<b>Administrador</b><br>
 		<% }%>
+		<% if (session.getAttribute("admin").equals("2")){%><br>
+			<b>Administrador Principal</b><br>
+		<% }%>
 		</div>
 		<div id="menu_control">
-		<% if (session.getAttribute("admin").equals("1")){%>
+		<% if (session.getAttribute("admin").equals("2") || session.getAttribute("admin").equals("1")){%>
 			<div class="menu_Usuario" id="sesionAdmin">MENU ADMINISTRADOR</div>
 		<% }%>
+		<% if (!session.getAttribute("admin").equals("2")){%>
 			<div class="menu_Usuario" id="cambiar_Pass">Cambiar Contraseña</div>
 			<div class="menu_Usuario" id="cambiar_Nombre">Cambiar Nombre</div>
 			<div class="menu_Usuario" id="cambiar_Paterno">Cambiar Apellido Paterno</div>
 			<div class="menu_Usuario" id="cambiar_Materno">Cambiar Apellido Materno</div>
 			<div class="menu_Usuario" id="misReservas">Mis Reservas</div>
 			<div class="menu_Usuario" id="eliminarReservas">Eliminar Reserva</div>
+		<% }%>
 		</div>
 		<% }%>
 	</div>

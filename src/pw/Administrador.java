@@ -1,60 +1,67 @@
 package pw;
-import javax.jdo.annotations.IdGeneratorStrategy;
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
+import java.io.IOException;
+import java.util.List;
 
-import com.google.appengine.api.datastore.Key;
+import javax.jdo.PersistenceManager;
+import javax.jdo.Query;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
 
-@PersistenceCapable
-public class Administrador {
-	@PrimaryKey
-	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private String gmail;
-	@Persistent
-	private String nombre;
-	@Persistent
-	private String apellido;
-	@Persistent
-	private String contraseña;
-	public Administrador(String gmail, String nombre, String apellido,
-			String contraseña) {
-		super();
-		this.gmail = gmail;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.contraseña = contraseña;
+@SuppressWarnings("serial")
+public class Administrador extends HttpServlet {
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException, ServletException {
+		RequestDispatcher mandar = null ;
+		HttpSession session = req.getSession();
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		
+		Query q = pm.newQuery(Usuario.class);
+			q.setFilter("admin == adminParam");
+			q.declareParameters("Integer adminParam");
+			List<Usuario> administradores = (List<Usuario>)q.execute(1);
+			
+			String rest=req.getParameter("admin");
+			
+			switch (rest){
+			case "admin":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/opciones_admin.jsp");
+				break;
+			
+			case "menu":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/opciones_menus.jsp");
+				break;
+				
+			case "bebida":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/opciones_bebida.jsp");
+				break;
+				
+			case "reserva":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/opciones_reserva.jsp");
+				break;
+				
+			case "cliente":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/opciones_clientes.jsp");
+				break;
+				
+			case "agregarAdmin":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/agregarAdmin.jsp");
+				break;
+				
+			case "borrarAdmin":
+				req.setAttribute("lista", administradores);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/borrarAdmin.jsp");
+				break;
+				
+			case "mostrarAdmin":
+				req.setAttribute("lista", administradores);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/mostrarAdmin.jsp");
+				break;
+				
+			default :
+			 	mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/opciones_admin.jsp");	
+			break;
+			}
+			mandar.forward(req, resp);
 	}
-	public String getGmail() {
-		return gmail;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public String getContraseña() {
-		return contraseña;
-	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
-	}
-	@Override
-	public String toString() {
-		return "Administrador [gmail=" + gmail + ", nombre=" + nombre
-				+ ", apellido=" + apellido + ", contraseña=" + contraseña + "]";
-	}
-	
-	
-	
-	
-	
-
 }

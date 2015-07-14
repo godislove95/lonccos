@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+#contenedorAdmin {
+	width: 99%;
+	border-radius:10px;
+	display:inline-block;
+	background-color: black;
+}
+#opcionesAdmin {
+	height: 100%;
+	border-radius:10px 0px 0px 10px;
+	text-align: center;
+	display:inline-block;
+	width: 25%;
+	background-color: #800000;
+	color:white;
+	float: left;
+}
+#cuerpoAdmin {
+	width: 75%;
+	display:inline-block;
+}
+.botonAdmin {
+	border-radius:10px;
+	background-color: black;
+	width: 80%;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.botonAdmin:hover {
+	color: black;
+	background-color: white;
+    cursor: url(../img/mouse2.png), auto;
+}
+.subBotonAdmin {
+	display:inline-block;
+	border-radius:10px;
+	color: white;
+	background-color: #800000;
+	width: 20%;
+	margin: auto;
+}
+
+.subBotonAdmin:hover {
+	background-color: white;
+	color: #800000;
+    cursor: url(../img/mouse2.png), auto;
+}
+
+#subOpcionesAdmin {
+	margin-top: 10px;
+}
+.subcuerpoAdmin {
+	display:inline-block;
+	width: 35%;
+	background-color:black;
+	color:white;
+	float: right;
+}

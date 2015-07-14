@@ -106,9 +106,9 @@ $(document).ready(function(){
 		$.ajax({
             type: "POST",
             url: "restaurant",
-            data: {"rest": "inicio"},
+            data: {"rest": "indexAdministrador"},
             success: function(data){
-            	$("#cuerpo").html("Administrador");
+            	$("#cuerpo").html(data);
             }
         });
 	});

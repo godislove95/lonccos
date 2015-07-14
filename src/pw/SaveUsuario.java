@@ -8,7 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
-public class SaveCliente extends HttpServlet {
+public class SaveUsuario extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {
 		RequestDispatcher mandar = null ;
@@ -20,7 +20,7 @@ public class SaveCliente extends HttpServlet {
 		String pass =req.getParameter("pass");
 		
 		Usuario registro = new Usuario(email, nombre, paterno, materno, dni, pass, 0);
-		Usuario admin = new Usuario("admin@lonccos.com", "admin", "first", "support", 12312312, "admin", 1);
+		Usuario admin = new Usuario("admin@lonccos.com", "admin", "first", "support", 12312312, "admin", 2);
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try{

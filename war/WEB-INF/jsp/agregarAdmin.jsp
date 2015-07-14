@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="pw.*"%>
+<%@ page import="javax.servlet.http.*;"%>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +9,7 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/resgistrarse.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Restaurante Lonccos</title>
+<title>Registro</title>
 </head>
 <body>
 <section id="cero">
@@ -15,7 +17,7 @@
 			<div id="table">
 				<h2 align="center">Registro</h2>
 				
-				<form action="/saveUsuario" id="saveCliente">
+				<form action="/saveAdmin" id="saveAdmin">
 				<div class="row">
 				<div class="cell">Ingrese su Nombre :</div>
 				<div class="cell"><input type="text" name="nombre" size="40" pattern="([a-z]{2,20})|([a-z]{2,20} [a-z]{2,20})|([a-z]{2,20} [a-z]{2,20} [a-z]{2,20})" required></div>	
@@ -42,7 +44,7 @@
 				</div>
 				<div class="row">
 				<div class="cell"></div>
-				<div class="cell"><input id="registrarse" type="submit" value="registrarse"/></div>
+				<div class="cell"><input id="registrarseAdmin" type="submit" value="registrarse"/></div>
 				</div>
 				</form>
 			</div>

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="pw.*"%>
 <%@ page import="java.util.*;"%>
-<% List<Reserva> array = (List<Reserva>)request.getAttribute("lista");%>
+<% List<Reserva> array = (List<Reserva>) request.getAttribute("lista");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>

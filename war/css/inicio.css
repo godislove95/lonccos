@@ -39,7 +39,7 @@ body {
 	float: right;
 }
 #sesion:hover {
-	color : red;
+	color : #800000;
 	background-color: black;
 	cursor: url(../img/mouse2.png), auto;
 }
