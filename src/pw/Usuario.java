@@ -1,6 +1,7 @@
 package pw;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
@@ -34,6 +35,9 @@ public class Usuario {
 	
 	@Persistent
 	public ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+	
+	@Persistent
+	public ArrayList<Historial> historial = new ArrayList<Historial>();
 
 	public Usuario(String email, String nombre, String paterno, String materno,
 			int dni, String pass, int admin) {
@@ -45,6 +49,7 @@ public class Usuario {
 		this.dni = dni;
 		this.pass = pass;
 		this.admin = admin;
+		historial.add(new Historial("Cuenta Nueva"));
 	}
 
 	public String getEmail() {
@@ -106,15 +111,20 @@ public class Usuario {
 	public void setReservas(ArrayList<Reserva> reservas) {
 		this.reservas = reservas;
 	}
-	
-	public void anadir(Reserva r) {
-		reservas.add(r);
+
+	public ArrayList<Historial> getHistorial() {
+		return historial;
+	}
+
+	public void setHistorial(ArrayList<Historial> historial) {
+		this.historial = historial;
 	}
 
 	@Override
 	public String toString() {
 		return "Usuario [email=" + email + ", nombre=" + nombre + ", paterno="
 				+ paterno + ", materno=" + materno + ", dni=" + dni + ", pass="
-				+ pass + ", admin=" + admin + ", reservas=" + reservas + "]";
+				+ pass + ", admin=" + admin + ", reservas=" + reservas
+				+ ", historial=" + historial + "]";
 	}
 }

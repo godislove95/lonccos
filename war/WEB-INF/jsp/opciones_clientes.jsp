@@ -4,19 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="opciones_cliente"></script>
-<link href="../css/administrador.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/opciones.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 <div class="contenedor">
 	<div class="opciones">
 	<div id="Administrador"></div>
-	<button type="button" class="boton" id="borar_cliente">ADMINISTRADOR</button>
-	<button type="button" class="boton" id="editar_cliente">MENU</button>
-	<button type="button" class="boton" id="listar_cliente">BEBIDA</button>
+	<button type="button" class="boton" id="borarCliente">BORRAR</button>
+	<button type="button" class="boton" id="editarCliente">BLOQUEAR</button>
+	<button type="button" class="boton" id="listarCliente">LISTAR</button>
+	<button type="button" class="boton" id="historialCliente">HISTORIAL</button>
 	</div>
-	<div class="subcuerpo_cliente"></div>
+	<div id="subcuerpocliente"> xvdzfcsdfdsfdsfsd</div>
 </div>
 
 </body>
