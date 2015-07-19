@@ -27,6 +27,8 @@
 			<div class="Cell"><h3>PRECIO</h3></div>
 			<div class="Cell"><h3>DESCRIPCION</h3></div>
 			<div class="Cell"><h3>IMAGEN</h3></div>
+			<div class="Cell"><h3>ID</h3></div>
+			<div class="Cell"><h3>IMG</h3></div>
 		</div>
 
 		<%for(Bebida p: lista){%>
@@ -46,7 +48,12 @@
 			<div class="Cell">
 				<% out.println(p.getImg());%>
 			</div>
-
+			<div class="Cell">
+				<% out.println(p.getId().getId());%>
+			</div>
+			<div class="Cell">
+			<img src="/mostrarImagen?blob-key=<% out.println(p.getImg());%>" alt="img">
+			</div>
 		</div>
 		<% }%>
 	</div>

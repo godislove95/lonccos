@@ -27,6 +27,7 @@
 			<div class="Cell"><h3>PRECIO</h3></div>
 			<div class="Cell"><h3>DESCRIPCION</h3></div>
 			<div class="Cell"><h3>IMAGEN</h3></div>
+			<div class="Cell"><h3>ID</h3></div>
 		</div>
 
 		<%for(Plato p: lista){%>
@@ -47,6 +48,9 @@
 			
 			<div class="Cell">
 				<% out.println(p.getImg());%>
+			</div>
+			<div class="Cell">
+				<% out.println(p.getId());%>
 			</div>
 
 		</div>

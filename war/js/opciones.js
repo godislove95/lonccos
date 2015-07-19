@@ -150,4 +150,15 @@ $(document).ready(function(){
         });
 	});
 	
+	$("#imagenBebida").click(function(event) {
+		$("#subcuerpoBebida").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/cambio",
+            data: {"rest": "imagenBebida"},
+            success: function(data){
+            	$("#subcuerpoBebida").html(data);
+            }
+        });
+	});
 });

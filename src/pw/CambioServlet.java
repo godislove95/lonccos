@@ -113,6 +113,10 @@ public class CambioServlet extends HttpServlet {
 				System.out.println("hgf");
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/agregarBebida.jsp");
 				break;	
+				
+			case "imagenBebida":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/anadirImagenBebida.jsp");
+				break;	
 			default :
 			 	mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");	
 			break;

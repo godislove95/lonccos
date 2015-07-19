@@ -35,7 +35,7 @@ public class Plato {
 	public Key getId() {
 		return id;
 	}
-
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -68,10 +68,10 @@ public class Plato {
 	}
 	@Override
 	public String toString() {
-		return "Plato [id=" + id + ", nombre=" + nombre + ", tipo=" + tipo
-				+ ", precio=" + precio + ", descripcion=" + descripcion
-				+ ", img=" + img + "]";
+		return "Plato [nombre=" + nombre + ", tipo=" + tipo + ", precio="
+				+ precio + ", descripcion=" + descripcion + ", img=" + img
+				+ "]";
 	}
-	
+
 	
 }

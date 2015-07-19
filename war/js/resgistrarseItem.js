@@ -39,4 +39,21 @@ $(document).ready(function(){
 				}
 		});
 	});
+	
+	$("#saveImagen").submit(function(event) {
+
+		event.preventDefault();
+		var $form = $(this),
+		file = $form.find( "input[name='myFile']" ).val(),
+		url = $form.attr( "action" );
+		$("#anadirImagenBebida").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');	
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: {"myFile": file},
+				success: function(data){
+					$("#anadirImagenBebida").html(data);
+				}
+		});
+	});
 });

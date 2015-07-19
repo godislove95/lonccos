@@ -12,6 +12,7 @@ $(document).ready(function(){
 			$("#contador").html('Direccionando en 1 segundo');
 			break;
 		default:
+			window.location="../";
 			setTimeout('document.location.reload()', 500);
 			break;
 		}
