@@ -49,7 +49,6 @@ public class Usuario {
 		this.dni = dni;
 		this.pass = pass;
 		this.admin = admin;
-		historial.add(new Historial("Cuenta Nueva"));
 	}
 
 	public String getEmail() {

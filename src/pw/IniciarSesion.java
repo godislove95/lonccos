@@ -40,7 +40,7 @@ public class IniciarSesion extends HttpServlet {
 				sesion.setAttribute("materno", cliente.get(0).getMaterno());
 				sesion.setAttribute("admin", ""+cliente.get(0).getAdmin());
 				System.out.println(cliente.get(0).getAdmin());
-				cliente.get(0).getHistorial().add(new Historial ("Inicio Sesion"));
+				cliente.get(0).getHistorial().add(new Historial ("Inicio Sesion", req.getRemoteAddr(), req.getRemoteHost()));
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
 			}
 		}catch(Exception e){

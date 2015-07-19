@@ -1,83 +1,137 @@
 $(document).ready(function(){
-	$("#Entrada").click(function(event) {
+	$("#Entrada").hover(
+			function(){
+				$("#Entrada").attr("src", "img/menu_entradas_clic.png");
+			},
+			function(){
+				$("#Entrada").attr("src", "img/menu_entradas.png");
+			}
+		);
+		$("#Sopa").hover(
+				function(){
+					$("#Sopa").attr("src", "img/menu_sopas_clic.png");
+				},
+				function(){
+					$("#Sopa").attr("src", "img/menu_sopas.png");
+				}
+			);
+		$("#Fondo").hover(
+				function(){
+					$("#Fondo").attr("src", "img/menu_platos_clic.png");
+				},
+				function(){
+					$("#Fondo").attr("src", "img/menu_platos.png");
+				}
+			);
+		$("#Ensalada").hover(
+				function(){
+					$("#Ensalada").attr("src", "img/menu_ensaladas_clic.png");
+				},
+				function(){
+					$("#Ensalada").attr("src", "img/menu_ensaladas.png");
+				}
+			);
+		$("#Postre").hover(
+				function(){
+					$("#Postre").attr("src", "img/menu_postres_clic.png");
+				},
+				function(){
+					$("#Postre").attr("src", "img/menu_postres.png");
+				}
+			);
+		$("#Extra").hover(
+				function(){
+					$("#Extra").attr("src", "img/menu_extras_clic.png");
+				},
+				function(){
+					$("#Extra").attr("src", "img/menu_extras.png");
+				}
+			);
+		$("#Bebida").hover(
+				function(){
+					$("#Bebida").attr("src", "img/menu_bebidas_clic.png");
+				},
+				function(){
+					$("#Bebida").attr("src", "img/menu_bebidas.png");
+				}
+			);
 		
+	$("#Entrada").click(function(event) {
+		$("#menucuerpoIndex").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "/menuServlet",
             data: {"rest": "entrada"},
             success: function(data){
-            	$("#cuerpo").html(data);
+            	$("#menucuerpoIndex").html(data);
             }
         });
 	});
 	$("#Sopa").click(function(event) {
+		$("#menucuerpoIndex").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "/menuServlet",
             data: {"rest": "sopa"},
             success: function(data){
-            	$("#cuerpo").html(data);
+            	$("#menucuerpoIndex").html(data);
             }
         });
 	});
 	$("#Fondo").click(function(event) {
+		$("#menucuerpoIndex").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
-            url: "restaurant",
-            data: {"rest": "menu"},
+            url: "/menuServlet",
+            data: {"rest": "fondo"},
             success: function(data){
-            	$("#cuerpo").html(data);
+            	$("#menucuerpoIndex").html(data);
             }
         });
 	});
 	$("#Ensalada").click(function(event) {
+		$("#menucuerpoIndex").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
-            url: "restaurant",
-            data: {"rest": "ofertas"},
+            url: "/menuServlet",
+            data: {"rest": "ensalada"},
             success: function(data){
-            	$("#cuerpo").html(data);
+            	$("#menucuerpoIndex").html(data);
             }
         });
 	});
 	$("#Postre").click(function(event) {
+		$("#menucuerpoIndex").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
-            url: "restaurant",
-            data: {"rest": "locales"},
+            url: "/menuServlet",
+            data: {"rest": "postre"},
             success: function(data){
-            	$("#cuerpo").html(data);
+            	$("#menucuerpoIndex").html(data);
             }
         });
 	});
 	$("#Extra").click(function(event) {
+		$("#menucuerpoIndex").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
-            url: "restaurant",
-            data: {"rest": "eventos"},
+            url: "/menuServlet",
+            data: {"rest": "extra"},
             success: function(data){
-            	$("#cuerpo").html(data);
+            	$("#menucuerpoIndex").html(data);
             }
         });
 	});
 	$("#Bebida").click(function(event) {
+		$("#menucuerpoIndex").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
-            url: "restaurant",
-            data: {"rest": "reservas"},
+            url: "/menuServlet",
+            data: {"rest": "bebida"},
             success: function(data){
-            	$("#cuerpo").html(data);
+            	$("#menucuerpoIndex").html(data);
             }
         });
 	});
-	$("#ingresar").click(function(event) {
-		$.ajax({
-            type: "POST",
-            url: "restaurant",
-            data: {"rest": "ingresar"},
-            success: function(data){
-            	$("#cuerpo").html(data);
-            }
-        });
-	});
+	
 });

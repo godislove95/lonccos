@@ -1,5 +1,5 @@
 body {
-	font-family: Comic Sans MS, Arial;
+	font-family: Comic Sans MS, Calibri;
 	cursor: url(../img/mouse1.png), auto;
 }
 .relacion {
@@ -83,6 +83,13 @@ body {
 	margin: auto;
 	width: 13%;
 	display: inline-block;
+}
+
+.menuindex {
+	margin: auto;
+	width: 13%;
+	display: inline-block;
+	cursor: url(../img/mouse2.png), auto;
 }
 
 .menu:hover {

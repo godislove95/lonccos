@@ -15,17 +15,19 @@ public class SalirSesion extends HttpServlet {
 			throws IOException, ServletException {
 		RequestDispatcher mandar = null ;
 
-        HttpSession sesion = req.getSession(false);
-        sesion.setAttribute("email", null);
+		HttpSession sesion = req.getSession();
         
         PersistenceManager pm = PMF.get().getPersistenceManager();
 		Query q = pm.newQuery(Usuario.class);
 		q.setFilter("email == emailParam");
 		q.declareParameters("String emailParam");
-		List<Usuario> cliente = (List<Usuario>)q.execute(sesion.getAttribute((String)sesion.getAttribute("email")));
+		List<Usuario> cliente = (List<Usuario>)q.execute((String)sesion.getAttribute("email"));
+		
+		sesion = req.getSession(false);
+        sesion.setAttribute("email", null);
 		
         if(sesion.getAttribute("email") == null){
-        	cliente.get(0).getHistorial().add(new Historial("Cerró Sesion"));
+        	cliente.get(0).getHistorial().add(new Historial("Cerró Sesion", req.getRemoteAddr(), req.getRemoteHost()));
         	mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
         }
         else{    

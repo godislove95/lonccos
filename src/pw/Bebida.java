@@ -4,33 +4,33 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.datastore.Key;
 @PersistenceCapable
 public class Bebida {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private int id;
+	private Key id;
 	@Persistent
 	private String nombre;
 	@Persistent
 	private String tipo;
 	@Persistent
-	private String precio;
+	private int precio;
 	@Persistent
 	private String descripcion;
 	@Persistent
 	private String img;
-	public Bebida(int id, String nombre, String tipo, String precio,
-			String descripcion, String img) {
+	public Bebida(String nombre, String tipo, int precio, String descripcion,
+			String img) {
 		super();
-		this.id = id;
 		this.nombre = nombre;
 		this.tipo = tipo;
 		this.precio = precio;
 		this.descripcion = descripcion;
 		this.img = img;
 	}
-	public int getId() {
+	public Key getId() {
 		return id;
 	}
 
@@ -46,10 +46,10 @@ public class Bebida {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public String getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
-	public void setPrecio(String precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 	public String getDescripcion() {
@@ -66,9 +66,9 @@ public class Bebida {
 	}
 	@Override
 	public String toString() {
-		return "Bebida [id=" + id + ", nombre=" + nombre + ", tipo=" + tipo
+		return "Plato [id=" + id + ", nombre=" + nombre + ", tipo=" + tipo
 				+ ", precio=" + precio + ", descripcion=" + descripcion
 				+ ", img=" + img + "]";
 	}
-
+	
 }

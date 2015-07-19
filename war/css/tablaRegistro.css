@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 body{
-	font-family:areal ;
+	font-family:arial ;
 }
 .Table{
 	display:table;
@@ -11,7 +11,6 @@ body{
 
 .Title {
 	background:#d5d5d5;
-	weidth:100%;
 	display: table-caption;
 	text-align: center;
 	font-weight: bold;

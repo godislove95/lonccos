@@ -4,20 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="opciones_bebida"></script>
-<link href="../css/administrador.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/opciones.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 <div class="contenedor">
 	<div class="opciones">
 	<div id="Administrador"></div>
-	<button type="button" class="boton" id="agregar_bebida">ADMINISTRADOR</button>
-	<button type="button" class="boton" id="borrar_bebida">MENU</button>
-	<button type="button" class="boton" id="editar_bebida">BEBIDA</button>
-	<button type="button" class="boton" id="lista_bebida">RESERVAS</button>
+	<button type="button" class="boton" id="agregarBebida">AGREGAR</button>
+	<button type="button" class="boton" id="borrarBebida">BORRAR</button>
+	<button type="button" class="boton" id="editarBebida">EDITAR</button>
+	<button type="button" class="boton" id="listaBebida">LISTAR</button>
 	</div>
-	<div class="subcuerpo_bibida"></div>
+	<div id="subcuerpoBebida"></div>
 </div>
 
 </body>
