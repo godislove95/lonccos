@@ -100,18 +100,27 @@ public class CambioServlet extends HttpServlet {
 			
 			case "agregarPlato":
 				Query q4=pm.newQuery(Usuario.class);
-				List<Usuario> agregarplato=(List<Usuario>)q4.execute();
+				List<Plato> agregarplato=(List<Plato>)q4.execute();
 				req.setAttribute("lista", agregarplato);
 				System.out.println("hgf");
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/agregarPlato.jsp");
 				break;	
 			
 			case "agregarBebida":
-				Query q5=pm.newQuery(Usuario.class);
-				List<Usuario> agregarbebida=(List<Usuario>)q5.execute();
+				Query q5=pm.newQuery(Bebida.class);
+				List<Bebida> agregarbebida=(List<Bebida>)q5.execute();
 				req.setAttribute("lista", agregarbebida);
 				System.out.println("hgf");
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/agregarBebida.jsp");
+				break;	
+				
+			case "listarBebida":
+				Query qb2=pm.newQuery(Bebida.class);
+				@SuppressWarnings("unchecked")
+				List<Bebida> listarbebida=(List<Bebida>)qb2.execute();
+				req.setAttribute("lista", listarbebida);
+				System.out.println("hghfghfghfhgf");
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/listarBebida.jsp");
 				break;	
 				
 			case "imagenBebida":

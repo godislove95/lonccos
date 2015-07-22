@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../js/resgistrarseItem.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>Registrar Plato</title>
+<title>Registrar Bebida</title>
 </head>
 <body>
 <div id=cuerpoAgregarBebida>
@@ -32,10 +32,10 @@
 				<div class="row">
 				<div class="cell">Tipo de Bebida</div>
 				<div class="cell"><select name="tipoBebida" id="tipoBebida">
-								<option value="ad_gaseosa">Entradas</option>
-								<option value="ad_cerveza">Sopas</option>
-								<option value="ad_tragos">Ensaladas</option>
-								<option value="ad_agua">Postres</option>
+								<option value="ad_gaseosa">Gaseosa</option>
+								<option value="ad_cerveza">Verveza</option>
+								<option value="ad_tragos">Tragos</option>
+								<option value="ad_agua">Agua</option>
 								</select>
 								</div>	
 				</div>

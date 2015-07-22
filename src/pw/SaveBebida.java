@@ -23,7 +23,7 @@ public class SaveBebida extends HttpServlet {
 		int precio = Integer.parseInt(req.getParameter("precioBebida"));
 		String descripcion = req.getParameter("descripcionBebida");
 
-		Bebida b = new Bebida(nombre, tipo,precio ,descripcion, "sss");
+		Bebida b = new Bebida(nombre, tipo,precio ,descripcion, "null");
 		
 
 		final PersistenceManager pm = PMF.get().getPersistenceManager();

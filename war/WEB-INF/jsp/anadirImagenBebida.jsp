@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../js/resgistrarseItemxx.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>Registrar Plato</title>
+<title>Subir</title>
 </head>
 <body>
 <div id="anadirImagenBebida">

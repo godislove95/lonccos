@@ -8,6 +8,11 @@ body{
 	text-align:center;
 	margin:auto;
 }
+img.img{
+	width:200px;
+	height: 200px;
+	border-radius:8px;
+}
 
 .Title {
 	background:#d5d5d5;
@@ -17,19 +22,18 @@ body{
 	font-size: larger;
 	border-radius:7px;
 	border:1px solid black;
-	
 }
 .Heading {
 	display: table-row;
 	font-weight: bold;
 	text-align: center;
 }
-
 .Cell {
 	background:#5480fe;
 	color:white;
 	display: table-cell;
 	border:none;
+	text-align:center;
 	border-radius:8px;
 	border-width: thin;
 	padding-left: 10px;

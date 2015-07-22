@@ -31,7 +31,7 @@ public class SavePlato extends HttpServlet {
 		
 		String descripcion = req.getParameter("descripcion");
 		
-		Plato plato = new Plato(nombre, tipo, precio, descripcion, "hla");
+		Plato plato = new Plato(nombre, tipo, precio, descripcion, "null");
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try{

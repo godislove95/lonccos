@@ -14,7 +14,7 @@
 	<button type="button" class="boton" id="agregarBebida">AGREGAR</button>
 	<button type="button" class="boton" id="borrarBebida">BORRAR</button>
 	<button type="button" class="boton" id="editarBebida">EDITAR</button>
-	<button type="button" class="boton" id="listaBebida">LISTAR</button>
+	<button type="button" class="boton" id="listarBebida">LISTAR</button>
 	<button type="button" class="boton" id="imagenBebida">AGREGAR IMAGEN</button>
 	</div>
 	<div id="subcuerpoBebida"></div>
