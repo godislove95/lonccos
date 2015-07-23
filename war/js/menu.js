@@ -1,4 +1,15 @@
 $(document).ready(function(){
+	$("#botonOfertas").click(function(event) {
+		$("#cuerpoOfertas2").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/menuServlet",
+            data: {"rest": "ofertas"},
+            success: function(data){
+            	$("#cuerpoOfertas2").html(data);
+            }
+        });
+	});
 	$("#Entrada").hover(
 			function(){
 				$("#Entrada").attr("src", "img/menu_entradas_clic.png");

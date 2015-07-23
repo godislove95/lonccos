@@ -18,12 +18,12 @@ public class Bebida {
 	@Persistent
 	private String tipo;
 	@Persistent
-	private int precio;
+	private double precio;
 	@Persistent
 	private String descripcion;
 	@Persistent
 	private String img;
-	public Bebida(String nombre, String tipo, int precio, String descripcion,
+	public Bebida(String nombre, String tipo, double precio, String descripcion,
 			String img) {
 		super();
 		this.nombre = nombre;
@@ -48,7 +48,7 @@ public class Bebida {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 	public void setPrecio(int precio) {

@@ -19,6 +19,15 @@ public class MenuServlet extends HttpServlet {
 		String rest=req.getParameter("rest");
 		
 		switch (rest){
+		case "ofertas":
+			Query o = pm.newQuery(Plato.class);
+			o.setFilter("tipo == tipoParam");
+			o.declareParameters("String tipoParam");
+			@SuppressWarnings("unchecked")
+			List<Plato> oferta = (List<Plato>) o.execute("extra");
+			req.setAttribute("lista", oferta);
+			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/filtroOfertas.jsp");
+			break;
 		case "entrada":
 			Query q0 = pm.newQuery(Plato.class);
 			q0.setFilter("tipo == tipoParam");
