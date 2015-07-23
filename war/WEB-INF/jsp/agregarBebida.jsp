@@ -27,7 +27,7 @@
 				
 				<div class="row">
 				<div class="cell">Nombre</div>
-				<div class="cell"><input type="text" name="nombreBebida" id="nombreBebida" size="40" pattern="([a-z]{2,20})"  required></div>
+				<div class="cell"><input type="text" name="nombreBebida" id="nombreBebida" size="40" pattern="([A-Za-z]{2,20})"  required></div>
 				</div>
 				<div class="row">
 				<div class="cell">Tipo de Bebida</div>
@@ -45,7 +45,7 @@
 				</div>
 				<div class="row">
 				<div class="cell">Precio</div>
-				<div class="cell"><input type="text" name="precioBebida" id="precioBebida" size="10"   pattern="[0-9]{8}"required/></div>
+				<div class="cell"><input type="text" name="precioBebida" id="precioBebida" size="10" required/></div>
 				</div>
 				<div class="row">
 				<div class="cell"></div>

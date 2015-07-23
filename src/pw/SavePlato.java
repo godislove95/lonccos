@@ -23,7 +23,7 @@ public class SavePlato extends HttpServlet {
 			throws IOException, ServerException, ServletException {
 		RequestDispatcher mandar = null ;
 		String nombre = req.getParameter("nombre");
-		int precio = Integer.parseInt(req.getParameter("precio"));
+		double precio = Double.parseDouble(req.getParameter("precio"));
 		String tipo = req.getParameter("tipo");
 		
 //		Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(req);

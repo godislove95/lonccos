@@ -18,15 +18,15 @@
 				<form action="/saveUsuario" id="saveCliente">
 				<div class="row">
 				<div class="cell">Ingrese su Nombre :</div>
-				<div class="cell"><input type="text" name="nombre" size="40" pattern="([a-z]{2,20})|([a-z]{2,20} [a-z]{2,20})|([a-z]{2,20} [a-z]{2,20} [a-z]{2,20})" required></div>	
+				<div class="cell"><input type="text" name="nombre" size="40" pattern="([A-Za-z]{2,20})|([A-Za-z]{2,20} [A-Za-z]{2,20})|([A-Za-z]{2,20} [A-Za-z]{2,20} [A-Za-z]{2,20})" required></div>	
 				</div>
 				<div class="row">
 				<div class="cell">Ingrese su Apellido Paterno :</div>
-				<div class="cell"><input type="text" name="paterno" size="40" pattern="([a-z]{2,20})"  required></div>
+				<div class="cell"><input type="text" name="paterno" size="40" pattern="([A-Za-z]{2,20})"  required></div>
 				</div>
 				<div class="row">
 				<div class="cell"> Ingrese su Apellido Materno :</div>
-				<div class="cell"><input type="text" name="materno" size="40" pattern="([a-z]{2,20})" required></div>	
+				<div class="cell"><input type="text" name="materno" size="40" pattern="([A-Za-z]{2,20})" required></div>	
 				</div>
 				<div class="row">
 				<div class="cell">DNI</div>
