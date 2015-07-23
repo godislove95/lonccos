@@ -58,6 +58,11 @@ public class Administrador extends HttpServlet {
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/mostrarAdmin.jsp");
 				break;
 				
+			case "editarAdmin":
+				req.setAttribute("lista", administradores);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/mostrarAdmin.jsp");
+				break;
+				
 			default :
 			 	mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/opciones_admin.jsp");	
 			break;

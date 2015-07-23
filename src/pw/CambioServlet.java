@@ -111,7 +111,42 @@ public class CambioServlet extends HttpServlet {
 				break;
 				
 			case "editarPlato":
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/editarPlato.jsp");
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/buscarPlato.jsp");
+				break;
+			
+			case "buscarPlato":
+				String id = req.getParameter("id");
+				Query qp3 = pm.newQuery(Plato.class);
+				qp3.setFilter("id == idParam"); 
+				qp3.declareParameters("Long idParam");
+				List<Plato> platos = (List<Plato>) qp3.execute(Long.parseLong(id));
+				if(platos.size() != 0){
+					req.setAttribute("plato", platos.get(0));
+					session.setAttribute("idPlato", platos.get(0).getId().getId());
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/editarPlato.jsp");
+				} else {
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+				}
+				break;
+				
+			case "editarPlatoAccion":
+				nombre = req.getParameter("nombre");
+				int precio = Integer.parseInt(req.getParameter("precio"));
+				String tipo = req.getParameter("tipo");
+				String descripcion = req.getParameter("descripcion");
+				Query qp4 = pm.newQuery(Plato.class);
+				qp4.setFilter("id == idParam"); 
+				qp4.declareParameters("Long idParam");
+				List<Plato> cambioPlatos = (List<Plato>) qp4.execute(Long.parseLong("" + session.getAttribute("idPlato")));
+				if(cambioPlatos.size() != 0){
+					cambioPlatos.get(0).setNombre(nombre);
+					cambioPlatos.get(0).setPrecio(precio);
+					cambioPlatos.get(0).setTipo(tipo);
+					cambioPlatos.get(0).setDescripcion(descripcion);
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
+				} else {
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+				}
 				break;
 				
 			case "imagenPlato":

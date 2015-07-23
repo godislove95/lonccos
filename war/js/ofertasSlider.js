@@ -3,16 +3,16 @@ $(document).ready(function(){
 	function columna1(){
 		switch (j % 4) {
 		case 1:
-			$("#columna1").html('<img class="imgOfertas" src="img/of_rocoto.jpg">');
+			$("#columna1Ofertas").html('<img class="imgOfertas" src="img/of_rocoto.jpg">');
 			break;
 		case 2:
-			$("#columna1").html('<img class="imgOfertas" src="img/of_triple.jpg">');
+			$("#columna1Ofertas").html('<img class="imgOfertas" src="img/of_triple.jpg">');
 			break;
 		case 3:
-			$("#columna1").html('<img class="imgOfertas" src="img/of_chicharron.jpg">');
+			$("#columna1Ofertas").html('<img class="imgOfertas" src="img/of_chicharron.jpg">');
 			break;
 		default:
-			$("#columna1").html('<img class="imgOfertas" src="img/of_adobo.jpg">');
+			$("#columna1Ofertas").html('<img class="imgOfertas" src="img/of_adobo.jpg">');
 			break;
 		}
 		j++;

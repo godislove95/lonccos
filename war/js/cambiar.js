@@ -80,4 +80,38 @@ $(document).ready(function(){
             }
         });
 	});
+	$("#buscarPlato").submit(function(event) {
+		event.preventDefault();
+		var $form = $(this),
+		id = $form.find( "input[name='id']" ).val(),
+	    url = $form.attr( "action" );
+		$("#subcuerpomenu").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "post",
+            url: url,
+            data: {"rest": "buscarPlato","id": id},
+            success: function(data){
+            	$("#subcuerpomenu").html(data);
+            }
+        });
+	});
+	$("#editarPlatoAccion").submit(function(event) {
+		event.preventDefault();
+		var $form = $(this),
+		nombre = $form.find( "input[name='nombre']" ).val(),
+		precio = $form.find( "input[name='precio']" ).val(),
+		tipo = $form.find( "input[name='tipo']" ).val(),
+		descripcion = $form.find( "textarea[name='descripcion']" ).val(),
+	    url = $form.attr( "action" );
+		$("#subcuerpomenu").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "post",
+            url: url,
+            data: {"rest": "editarPlatoAccion","nombre": nombre,"precio": precio
+            	,"tipo": tipo,"descripcion": descripcion},
+            success: function(data){
+            	$("#subcuerpomenu").html(data);
+            }
+        });
+	});
 });

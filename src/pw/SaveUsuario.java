@@ -19,7 +19,7 @@ public class SaveUsuario extends HttpServlet {
 		String paterno=req.getParameter("paterno");
 		String materno = req.getParameter("materno");
 		int dni = Integer.parseInt(req.getParameter("dni"));
-		String pass =req.getParameter("pass");
+		String pass =req.getParameter("pass"); 
 		
 		Usuario registro = new Usuario(email, nombre, paterno, materno, dni, pass, 0);
 		Usuario admin = new Usuario("admin@lonccos.com", "admin", "first", "support", 12312312, "admin", 2);

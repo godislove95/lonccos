@@ -4,7 +4,7 @@
 <html>
 <head>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/menusSlider.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
 <link href="css/inicio.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -24,7 +24,7 @@
 		
 	</div>
 	<div id="menucuerpoIndex">
-		<img class="cambio" src="img/of_rocoto.jpg">
+
 	</div>
 </body>
 </html>

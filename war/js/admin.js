@@ -87,4 +87,15 @@ $(document).ready(function(){
             }
         });
 	});
+	$("#editarAdmin").click(function(event) {
+		$("#subcuerpoAdmin").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/administrador",
+            data: {"admin": "editarAdmin"},
+            success: function(data){
+            	$("#subcuerpoAdmin").html(data);
+            }
+        });
+	});
 });
