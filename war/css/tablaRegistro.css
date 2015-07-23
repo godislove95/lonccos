@@ -1,12 +1,16 @@
 @CHARSET "UTF-8";
-
+*{
+	margin-top:15px;
+}
 body{
 	font-family:arial ;
+	font-size:70%;
 }
 .Table{
 	display:table;
 	text-align:center;
 	margin:auto;
+	max-width: 100%;
 }
 img.img{
 	width:200px;
@@ -15,13 +19,15 @@ img.img{
 }
 
 .Title {
-	background:#d5d5d5;
+	background:#916030;
 	display: table-caption;
 	text-align: center;
 	font-weight: bold;
+	color:white;
+	border:5px solid white;
 	font-size: larger;
 	border-radius:7px;
-	border:1px solid black;
+	
 }
 .Heading {
 	display: table-row;
@@ -29,12 +35,12 @@ img.img{
 	text-align: center;
 }
 .Cell {
-	background:#5480fe;
+	background:#de8439;
 	color:white;
 	display: table-cell;
 	border:none;
 	text-align:center;
-	border-radius:8px;
+	border:2px solid white ;
 	border-width: thin;
 	padding-left: 10px;
 	padding-right: 10px;

@@ -17,6 +17,7 @@ $(document).ready(function(){
 	}
 	setInterval(function(){slider()}, 4000);
 	
+	
 	$("#cambiar_Pass").click(function(event) {
 		$("#cuerpo").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({

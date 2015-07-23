@@ -5,17 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="../js/opciones.js"></script>
+<link rel="stylesheet" href="/css/opciones.css">
 <title>Insert title here</title>
 </head>
 <body>
 <div class="contenedor">
 	<div class="opciones">
 	<div id="Administrador"></div>
-	<button type="button" class="boton" id="agregarBebida">AGREGAR</button>
-	<button type="button" class="boton" id="borrarBebida">BORRAR</button>
-	<button type="button" class="boton" id="editarBebida">EDITAR</button>
-	<button type="button" class="boton" id="listarBebida">LISTAR</button>
-	<button type="button" class="boton" id="imagenBebida">AGREGAR IMAGEN</button>
+	<div  class="boton" id="agregarBebida">AGREGAR</div>
+	<div  class="boton" id="borrarBebida">BORRAR</div>
+	<div  class="boton" id="editarBebida">EDITAR</div>
+	<div  class="boton" id="listarBebida">LISTAR</div>
+	<div  class="boton" id="imagenBebida">AGREGAR IMAGEN</div>
 	</div>
 	<div id="subcuerpoBebida"></div>
 </div>

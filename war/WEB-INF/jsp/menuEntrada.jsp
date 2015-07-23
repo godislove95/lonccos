@@ -47,7 +47,7 @@
 			</div>
 			
 			<div class="Cell">
-				<% out.println(p.getImg());%>
+							<img class="img" src="/mostrarImagen?blob-key=<% out.println(p.getImg());%>" alt="img">
 			</div>
 			<div class="Cell">
 				<% out.println(p.getId());%>

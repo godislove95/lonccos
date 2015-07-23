@@ -13,7 +13,6 @@
 <div id="registro">
 
 		<h1>INGRESAR</h1>
-		<br>
 		<div id="contenedor">
 			<form method="post" action="/iniciarSesion" id="iniciarSesion">
 				<div id="contenidos">

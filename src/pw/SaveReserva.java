@@ -31,7 +31,7 @@ public class SaveReserva extends HttpServlet {
 		try{
 			Reserva r = new Reserva(hora, numero, lugar, zona, fecha, tipo);
 			cliente.get(0).getReservas().add(r);
-			cliente.get(0).getHistorial().add(new Historial ("Reservo", req.getRemoteAddr(), req.getRemoteHost()));
+			cliente.get(0).getHistorial().add(new Historial ("Reservo "+r.getTipo(), req.getRemoteAddr(), req.getRemoteHost()));
 			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
 			System.out.println(cliente.get(0).reservas.size());
 			

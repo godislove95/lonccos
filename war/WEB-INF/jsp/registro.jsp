@@ -10,7 +10,7 @@
 <title>Restaurante Lonccos</title>
 </head>
 <body>
-<section id="cero">
+<div id="cero">
 		<div id="uno">
 			<div id="table">
 				<h2 align="center">Registro</h2>
@@ -47,6 +47,6 @@
 				</form>
 			</div>
 		</div>
-	</section>
+	</div>
 </body>
 </html>

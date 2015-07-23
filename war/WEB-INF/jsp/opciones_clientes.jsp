@@ -5,16 +5,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="../js/opciones.js"></script>
+<link rel="stylesheet" href="/css/opciones.css">
 <title>Insert title here</title>
 </head>
 <body>
 <div class="contenedor">
 	<div class="opciones">
 	<div id="Administrador"></div>
-	<button type="button" class="boton" id="borarCliente">BORRAR</button>
-	<button type="button" class="boton" id="editarCliente">BLOQUEAR</button>
-	<button type="button" class="boton" id="listarCliente">LISTAR</button>
-	<button type="button" class="boton" id="historialCliente">HISTORIAL</button>
+	<div  class="boton" id="borarCliente">BORRAR</div>
+	<div  class="boton" id="editarCliente">BLOQUEAR</div>
+	<div  class="boton" id="listarCliente">LISTAR</div>
+	<div  class="boton" id="historialCliente">HISTORIAL</div>
 	</div>
 	<div id="subcuerpocliente"> xvdzfcsdfdsfdsfsd</div>
 </div>

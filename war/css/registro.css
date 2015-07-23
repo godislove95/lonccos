@@ -3,20 +3,17 @@ body{
 	font-family: Comic Sans MS, Arial;
 	
 }
-section#uno{
-	margin: 0.5em auto;
-	max-width:1000px;
-	padding:0;
-	text-align: center;
-}
-section#cero{
+
+div#cero{
 	background: #51401c;
 	border-radius:2em;
-	margin: 5em auto;
-	max-width:35%;
+	margin: 2.5em auto;
 	padding:2em ;
 	text-align: center;
 	color:white; 
+	border:5px solid white;
+	width: 500px;
+	opacity:0.9;
 }
 .table{
 	display:table;
@@ -59,4 +56,9 @@ input[type=submit]{
 	float:left;
 	width:100%;
 	font-family: Comic Sans MS, Arial;
+}
+input[type=submit]:hover{
+	background:blue;
+    cursor: url(../img/mouse2.png), auto;
+	
 }

@@ -19,9 +19,9 @@
 <body>
 <div id="anadirImagenBebida">
 
-   					<form action=<%= blobstoreService.createUploadUrl("/saveImagen") %> method="post"  id="saveImagen" enctype="multipart/form-data">
+   					<form action=<%= blobstoreService.createUploadUrl("/saveImagenBebida") %> method="post"  id="saveImagen" enctype="multipart/form-data">
 					 <input type="file"name="myFile" required>
-					 <input type="text" name="id" pattern="[0-9]{16}" maxlength="16" required>
+					 <input type="text" name="id"  pattern="[0-9]{16}" maxlength="16" required>
 					 <input type="submit" name="subir"value="subir" >
 				</form>
 </div>	

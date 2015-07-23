@@ -7,7 +7,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
 		<servlet-name>RestLonccos</servlet-name>
 		<servlet-class>pw.RestLonccosServlet</servlet-class>
-	</servlet>
+	</servlet> 
 	<servlet-mapping>
 		<servlet-name>RestLonccos</servlet-name>
 		<url-pattern>/restlonccos</url-pattern>
@@ -131,12 +131,21 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>SaveImagen</servlet-name>
-		<servlet-class>pw.SaveImagen</servlet-class>
+		<servlet-name>SaveImagenBebida</servlet-name>
+		<servlet-class>pw.SaveImagenBebida</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>SaveImagen</servlet-name>
-		<url-pattern>/saveImagen</url-pattern>
+		<servlet-name>SaveImagenBebida</servlet-name>
+		<url-pattern>/saveImagenBebida</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SaveImagenPlato</servlet-name>
+		<servlet-class>pw.SaveImagenPlato</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SaveImagenPlato</servlet-name>
+		<url-pattern>/saveImagenPlato</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>

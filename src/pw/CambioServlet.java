@@ -99,13 +99,26 @@ public class CambioServlet extends HttpServlet {
 				break;	
 			
 			case "agregarPlato":
-				Query q4=pm.newQuery(Usuario.class);
-				List<Plato> agregarplato=(List<Plato>)q4.execute();
-				req.setAttribute("lista", agregarplato);
-				System.out.println("hgf");
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/agregarPlato.jsp");
 				break;	
 			
+			case "listarPlato":
+				Query qp2=pm.newQuery(Plato.class);
+				List<Plato> listarplato=(List<Plato>)qp2.execute();
+				req.setAttribute("lista", listarplato);
+				System.out.println("golaasdasdasd");
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/listarMenu.jsp");
+				break;
+				
+			case "editarPlato":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/editarPlato.jsp");
+				break;
+				
+			case "imagenPlato":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/anadirImagenPlato.jsp");
+				System.out.println("dasdasdsad");
+				break;
+				
 			case "agregarBebida":
 				Query q5=pm.newQuery(Bebida.class);
 				List<Bebida> agregarbebida=(List<Bebida>)q5.execute();
@@ -126,6 +139,16 @@ public class CambioServlet extends HttpServlet {
 			case "imagenBebida":
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/anadirImagenBebida.jsp");
 				break;	
+				
+			case "listarReserva":
+				Query qr3=pm.newQuery(Reserva.class);
+				@SuppressWarnings("unchecked")
+				List<Reserva> reservas=(List<Reserva>)qr3.execute();
+				req.setAttribute("lista", reservas);
+				System.out.println("jhjhjh");
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/listarReservas.jsp");
+				break;	
+				
 			default :
 			 	mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");	
 			break;

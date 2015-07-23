@@ -103,6 +103,18 @@ $(document).ready(function(){
         });
 	});
 	
+	$("#imagenPlato").click(function(event) {
+		$("#subcuerpomenu").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/cambio",
+            data: {"rest": "imagenPlato"},
+            success: function(data){
+            	$("#subcuerpomenu").html(data);
+            }
+        });
+	});
+	
 	$("#agregarBebida").click(function(event) {
 		$("#subcuerpoBebida").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
@@ -150,15 +162,46 @@ $(document).ready(function(){
         });
 	});
 	
-	$("#imagenBebida").click(function(event) {
-		$("#subcuerpoBebida").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+	$("#borrarReserva").click(function(event) {
+		$("#subcuerpoReserva").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "/cambio",
-            data: {"rest": "imagenBebida"},
+            data: {"rest": "borrarReserva"},
             success: function(data){
-            	$("#subcuerpoBebida").html(data);
+            	$("#subcuerpoReserva").html(data);
             }
         });
 	});
+	
+	
+	
+	$("#editarReserva").click(function(event) {
+		$("#subcuerpoReserva").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/cambio",
+            data: {"rest": "editarReserva"},
+            success: function(data){
+            	$("#subcuerpoReserva").html(data);
+            }
+        });
+	});
+	
+	
+	$("#listarReserva").click(function(event) {
+		$("#subcuerpoReserva").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/cambio",
+            data: {"rest": "listarReserva"},
+            success: function(data){
+            	$("#subcuerpoReserva").html(data);
+            }
+        });
+	});
+	
+	
+	
+	
 });

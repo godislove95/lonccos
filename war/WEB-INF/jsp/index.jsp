@@ -8,6 +8,7 @@
 <head>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/principal.js"></script>
+<link rel="stylesheet" href="css/style.css">
 <link href="css/inicio.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Restaurante Lonccos</title>
@@ -35,7 +36,7 @@
 		<% //out.print(session.getAttribute("pass"));%><br>
 		<% out.print(session.getAttribute("email"));%><br>
 		<% out.print(session.getAttribute("nombre"));%>
-		<% out.print(session.getAttribute("paterno")+" ");%>
+		<% out.print(session.getAttribute("paterno"));%>
 		<% out.print(session.getAttribute("materno"));%>
 		<% if (session.getAttribute("admin").equals("0")){%><br>
 			<b>Cliente</b><br>
@@ -69,6 +70,16 @@
 		<p id="pie_text">Copyright © Lonccos<br>
 		Restaurant Lonccos<br>
 		Derechos Reservados</p>
+	</div>
+	<div class="social">
+		<ul>
+			<li><a id="uno" href="" target="_blank" class="icon-facebook "></a></li>
+			<li><a id="dos" href="" target="_blank" class="icon-twitter "></a></li>
+			<li><a id="tres" href="" target="_blank" class="icon-instagram "></a></li>
+			<li><a id="cuatro" href="" target="_blank" class="icon-google-plus "></a></li>
+			<li><a id="cinco"href="mailto:el.manolito2013.jlb@gmail.com"  class="icon-mail2"></a></li>
+		</ul>
+	
 	</div>
 </body>
 </html>

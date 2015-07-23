@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="opciones_reserva"></script>
+<script type="text/javascript" src="js/opciones.js"></script>
+<link rel="stylesheet" href="/css/opciones.css">
 <link href="../css/administrador.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 </head>
@@ -12,11 +13,11 @@
 <div class="contenedor">
 	<div class="opciones">
 	<div id="Administrador"></div>
-	<button type="button" class="boton" id="borar_reserva">ADMINISTRADOR</button>
-	<button type="button" class="boton" id="editar_reserva">MENU</button>
-	<button type="button" class="boton" id="lista_reserva">BEBIDA</button>
+	<div  class="boton" id="borrarReserva">BORRAR</div>
+	<div  class="boton" id="editarReserva">EDITAR</div>
+	<div  class="boton" id="listarReserva">LISTAR</div>
 	</div>
-	<div class="subcuerpo_reserva"></div>
+	<div id="subcuerpoReserva"></div>
 </div>
 
 </body>

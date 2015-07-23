@@ -52,9 +52,6 @@
 				<div class="cell"><input id="agregarBebida" type="submit" value="agregarBebida"/></div>
 				</div>
 				</form>
-				<form action="<%=blobstoreService.createUploadUrl("/upload")%>"method="post" enctype="multipart/form-data">
-					 <input type="file"name="myFile">
-				</form>
 			</div>
 	</div>
 </div>	

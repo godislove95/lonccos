@@ -5,6 +5,7 @@ body{
 #cero{
 	background: #51401c;
 	border-radius:2em;
+	border:5px solid white;
 	margin: 5em auto;
 	max-width:35%;
 	padding:2em ;
@@ -31,4 +32,22 @@ div#calumna1,div#columna2 {
 	padding-left: 10px;
 	padding-right: 10px;
 	text-align:left;
+}
+input[type=submit]{
+	padding:1em;
+	font-size:15px;
+	background:#b9913e;
+	border:none;
+	color:white;
+	font-family:arial black;
+	border-radius:4px;
+	text-decoration:none;
+	float:left;
+	width:100%;
+	font-family: Comic Sans MS, Arial;
+}
+input[type=submit]:hover{
+	background:blue;
+	cursor: url(../img/mouse2.png), auto;
+	
 }

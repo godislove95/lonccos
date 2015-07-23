@@ -34,7 +34,7 @@ public class MenuServlet extends HttpServlet {
 			q1.setFilter("tipo == tipoParam");
 			q1.declareParameters("String tipoParam");
 			@SuppressWarnings("unchecked")
-			List<Plato> sopa = (List<Plato>) q1.execute("ad_sopa");
+			List<Plato> sopa = (List<Plato>) q1.execute("sopa");
 			req.setAttribute("lista", sopa);
 			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/menuSopa.jsp");
 			break;
@@ -44,7 +44,7 @@ public class MenuServlet extends HttpServlet {
 			q2.setFilter("tipo == tipoParam");
 			q2.declareParameters("String tipoParam");
 			@SuppressWarnings("unchecked")
-			List<Plato> fondo = (List<Plato>) q2.execute("ad_fondo");
+			List<Plato> fondo = (List<Plato>) q2.execute("fondo");
 			req.setAttribute("lista", fondo);
 			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/menuFondo.jsp");
 			break;
@@ -54,7 +54,7 @@ public class MenuServlet extends HttpServlet {
 			q3.setFilter("tipo == tipoParam");
 			q3.declareParameters("String tipoParam");
 			@SuppressWarnings("unchecked")
-			List<Plato> ensalada = (List<Plato>) q3.execute("ad_ensalada");
+			List<Plato> ensalada = (List<Plato>) q3.execute("ensalada");
 			req.setAttribute("lista", ensalada);
 			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/menuEnsalada.jsp");
 			break;
@@ -64,7 +64,7 @@ public class MenuServlet extends HttpServlet {
 			q4.setFilter("tipo == tipoParam");
 			q4.declareParameters("String tipoParam");
 			@SuppressWarnings("unchecked")
-			List<Plato> postre = (List<Plato>) q4.execute("ad_postre");
+			List<Plato> postre = (List<Plato>) q4.execute("postre");
 			req.setAttribute("lista", postre);
 			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/menuPostre.jsp");
 			break;
@@ -74,7 +74,7 @@ public class MenuServlet extends HttpServlet {
 			q5.setFilter("tipo == tipoParam");
 			q5.declareParameters("String tipoParam");
 			@SuppressWarnings("unchecked")
-			List<Plato> extra = (List<Plato>) q5.execute("ad_extra");
+			List<Plato> extra = (List<Plato>) q5.execute("extra");
 			req.setAttribute("lista", extra);
 			mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/menuExtra.jsp");
 			break;

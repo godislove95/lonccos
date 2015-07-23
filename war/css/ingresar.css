@@ -4,8 +4,7 @@ body{
 }
 #contenedor {
     display: table;
-    width: 100%;
-    margin: 0 auto;
+    width: 80%;
 }
 #contenidos {
     display: table-row;
@@ -17,19 +16,16 @@ body{
 }
 #registro{
 	background:#51401c;
-	opacity:0.9;
-	width:400px;
-	border:5px solid white;
-	margin:75px auto;
-	padding:2em;
+	width:350px;
+	margin:2.5em auto;
+	padding:1em;
 	border-radius:2em;
 	color:white;
 	text-align:center;
-	
+	height: 80%;
 }
 div#registro input[type=text],input[type=password]{
-	margin:0 1em 1em 0;
-	width:200px;
+	width:190px;
 	border:none;
 	padding:1em;
 	border-radius:6px;
@@ -45,6 +41,7 @@ div#registro input.primero[type=submit]{
 	border-radius:4px;
 	text-decoration:none;
 	float:left;
+	left :5px;
 	width:40%;
 	font-family: Comic Sans MS, Arial;
 }
@@ -58,6 +55,7 @@ div#registro input.segundo[type=submit]{
 	border-radius:4px;
 	text-decoration:none;
 	float:right;
+	right :5px;
 	width:40%;
 	font-family: Comic Sans MS, Arial;
 	

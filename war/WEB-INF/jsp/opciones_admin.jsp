@@ -17,7 +17,7 @@
 		<div class="subBotonAdmin" id="editarAdmin">Editar<br>Administrador</div>
 		<div class="subBotonAdmin" id="mostrarAdmin">Mostrar<br>Administrador</div>
 	</div>
-	<div id="subcuerpoAdmin">SubCuerpo</div>
+	<div id="subcuerpoAdmin"></div>
 </div>
 
 </body>
