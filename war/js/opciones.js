@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#borarCliente").click(function(event) {
+	$("#borrarCliente").click(function(event) {
 		$("#subcuerpocliente").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
@@ -10,14 +10,14 @@ $(document).ready(function(){
             }
         });
 	});
-	$("#editarCliente").click(function(event) {
+	$("#bloquearCliente").click(function(event) {
 		$("#subcuerpocliente").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
             url: "/cambio",
-            data: {"rest": "editarCliente"},
+            data: {"rest": "bloquearCliente"},
             success: function(data){
-            	$("#cuerpoAdmin").html(data);
+            	$("#subcuerpocliente").html(data);
             }
         });
 	});
@@ -44,18 +44,6 @@ $(document).ready(function(){
             }
         });
 	});
-	
-	$("#borarCliente").click(function(event) {
-		$("#subcuerpocliente").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
-		$.ajax({
-            type: "POST",
-            url: "/cambio",
-            data: {"rest": "borrarCliente"},
-            success: function(data){
-            	$("#subcuerpocliente").html(data);
-            }
-        });
-	});
 	$("#agregarPlato").click(function(event) {
 		$("#subcuerpomenu").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
@@ -68,7 +56,6 @@ $(document).ready(function(){
         });
 	});
 	$("#borrarPlato").click(function(event) {
-		
 		$("#subcuerpomenu").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
@@ -127,7 +114,6 @@ $(document).ready(function(){
         });
 	});
 	$("#borrarBebida").click(function(event) {
-		
 		$("#subcuerpoBebida").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
             type: "POST",
@@ -161,6 +147,18 @@ $(document).ready(function(){
             }
         });
 	});
+	
+	$("#imagenBebida").click(function(event) {
+			$("#subcuerpoBebida").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+			$.ajax({
+	            type: "POST",
+	            url: "/cambio",
+	            data: {"rest": "imagenBebida"},
+	            success: function(data){
+	            	$("#subcuerpoBebida").html(data);
+	            }
+	        });
+		});
 	
 	$("#borrarReserva").click(function(event) {
 		$("#subcuerpoReserva").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');

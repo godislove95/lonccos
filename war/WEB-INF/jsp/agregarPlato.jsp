@@ -32,12 +32,12 @@
 				<div class="row">
 				<div class="cell">Tipo de plato</div>
 				<div class="cell"><select name="tipo" id="tipo">
-								<option value="entrada">Entradas</option>
-								<option value="sopa">Sopas</option>
-								<option value="ensalada">Ensaladas</option>
-								<option value="postre">Postres</option>
-								<option value="fondo">Platos de fondo</option>
-								<option value="extra">Extras</option>
+								<option value="entrada">entradas</option>
+								<option value="sopa">sopas</option>
+								<option value="ensalada">ensaladas</option>
+								<option value="postre">postres</option>
+								<option value="fondo">platos de fondo</option>
+								<option value="extra">extras</option>
 								</select>
 								</div>	
 				</div>

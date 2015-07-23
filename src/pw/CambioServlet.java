@@ -21,6 +21,10 @@ public class CambioServlet extends HttpServlet {
 			q.setFilter("email == emailParam");
 			q.declareParameters("String emailParam");
 			List<Usuario> cliente= (List<Usuario>)q.execute(session.getAttribute("email"));
+			String id, email, paterno, materno, nombre, descripcion, tipo;
+			int precio;
+			Query qa;
+			List<Usuario> users;
 			
 			switch (rest){
 			
@@ -38,7 +42,7 @@ public class CambioServlet extends HttpServlet {
 				break;
 				
 			case "cambiarMaterno":
-				String materno = req.getParameter("materno");
+				materno = req.getParameter("materno");
 				cliente.get(0).setMaterno(materno);
 				session.setAttribute("materno", materno);
 				cliente.get(0).getHistorial().add(new Historial("Cambio Materno", req.getRemoteAddr(), req.getRemoteHost()));
@@ -46,7 +50,7 @@ public class CambioServlet extends HttpServlet {
 				break;
 			
 			case "cambiarNombre":
-				String nombre = req.getParameter("nombre");
+				nombre = req.getParameter("nombre");
 				cliente.get(0).setNombre(nombre);
 				session.setAttribute("nombre", nombre);
 				cliente.get(0).getHistorial().add(new Historial("Cambio Nombre", req.getRemoteAddr(), req.getRemoteHost()));
@@ -54,7 +58,7 @@ public class CambioServlet extends HttpServlet {
 				break;
 				
 			case "cambiarPaterno":
-				String paterno = req.getParameter("paterno");
+				paterno = req.getParameter("paterno");
 				cliente.get(0).setPaterno(paterno);
 				session.setAttribute("paterno", paterno);
 				cliente.get(0).getHistorial().add(new Historial("Cambio Paterno", req.getRemoteAddr(), req.getRemoteHost()));
@@ -81,6 +85,24 @@ public class CambioServlet extends HttpServlet {
 					}
 				}
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/noExisteReserva.jsp");
+				break;
+				
+			case "bloquearCliente":
+				Query c1 = pm.newQuery(Usuario.class);
+				c1.setFilter("admin == adminParam");
+				c1.declareParameters("Integer adminParam");
+				List<Usuario> clientes = (List<Usuario>) c1.execute(0);
+				req.setAttribute("lista", clientes);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/bloquearCliente.jsp");
+				break;
+			
+			case "borrarCliente":
+				Query c2 = pm.newQuery(Usuario.class);
+				c2.setFilter("admin == adminParam");
+				c2.declareParameters("Integer adminParam");
+				List<Usuario> borrados = (List<Usuario>) c2.execute(0);
+				req.setAttribute("lista", borrados);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/eliminarCliente.jsp");
 				break;
 				
 			case "listarCliente":
@@ -113,9 +135,13 @@ public class CambioServlet extends HttpServlet {
 			case "editarPlato":
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/buscarPlato.jsp");
 				break;
+				
+			case "editarBebida":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/buscarBebida.jsp");
+				break;
 			
 			case "buscarPlato":
-				String id = req.getParameter("id");
+				id = req.getParameter("id");
 				Query qp3 = pm.newQuery(Plato.class);
 				qp3.setFilter("id == idParam"); 
 				qp3.declareParameters("Long idParam");
@@ -129,11 +155,48 @@ public class CambioServlet extends HttpServlet {
 				}
 				break;
 				
+			case "buscarBebida":
+				System.out.println("x");
+				id = req.getParameter("id");
+				Query qb1 = pm.newQuery(Bebida.class);
+				qb1.setFilter("id == idParam"); 
+				qb1.declareParameters("Long idParam");
+				List<Bebida> bebidas = (List<Bebida>) qb1.execute(Long.parseLong(id));
+				if(bebidas.size() != 0){
+					req.setAttribute("bebida", bebidas.get(0));
+					session.setAttribute("idBebida", bebidas.get(0).getId().getId());
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/editarPlato.jsp");
+				} else {
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+				}
+				break;
+				
+			case "editarBebidaAccion":
+				System.out.println("ssss");
+				nombre = req.getParameter("nombre");
+				precio = Integer.parseInt(req.getParameter("precio"));
+				tipo = req.getParameter("tipo");
+				descripcion = req.getParameter("descripcion");
+				Query qb3 = pm.newQuery(Bebida.class);
+				qb3.setFilter("id == idParam");
+				qb3.declareParameters("Long idParam");
+				List<Bebida> cambioBebidas = (List<Bebida>) qb3.execute(Long.parseLong("" + session.getAttribute("idBebida")));
+				if(cambioBebidas.size() != 0){
+					cambioBebidas.get(0).setNombre(nombre);
+					cambioBebidas.get(0).setPrecio(precio);
+					cambioBebidas.get(0).setTipo(tipo);
+					cambioBebidas.get(0).setDescripcion(descripcion);
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
+				} else {
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+				}
+				break;	
+				
 			case "editarPlatoAccion":
 				nombre = req.getParameter("nombre");
-				int precio = Integer.parseInt(req.getParameter("precio"));
-				String tipo = req.getParameter("tipo");
-				String descripcion = req.getParameter("descripcion");
+				precio = Integer.parseInt(req.getParameter("precio"));
+				tipo = req.getParameter("tipo");
+				descripcion = req.getParameter("descripcion");
 				Query qp4 = pm.newQuery(Plato.class);
 				qp4.setFilter("id == idParam"); 
 				qp4.declareParameters("Long idParam");
@@ -143,6 +206,43 @@ public class CambioServlet extends HttpServlet {
 					cambioPlatos.get(0).setPrecio(precio);
 					cambioPlatos.get(0).setTipo(tipo);
 					cambioPlatos.get(0).setDescripcion(descripcion);
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
+				} else {
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+				}
+				break;
+				
+			case "buscarAdministrador":
+				email = req.getParameter("email");
+				qa = pm.newQuery(Usuario.class);
+				qa.setFilter("email == idParam"); 
+				qa.declareParameters("String idParam");
+				users = (List<Usuario>) qa.execute(email);
+				if(users.size() != 0){
+					req.setAttribute("user", users.get(0));
+					session.setAttribute("emailBuscado", email);
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/editarAdministrador.jsp");
+				} else {
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+				}
+				break;
+			
+			case "editarAdministradorAccion":
+				System.out.println("11111");
+				nombre = req.getParameter("nombre");
+				paterno = req.getParameter("paterno");
+				materno = req.getParameter("materno");
+				int dni = Integer.parseInt(req.getParameter("dni"));
+				qa = pm.newQuery(Usuario.class);
+				System.out.println("11111");
+				qa.setFilter("email == idParam");
+				qa.declareParameters("String idParam");
+				users = (List<Usuario>) qa.execute(session.getAttribute("emailBuscado"));
+				if(users.size() != 0){
+					users.get(0).setNombre(nombre);
+					users.get(0).setPaterno(paterno);
+					users.get(0).setMaterno(materno);;
+					users.get(0).setDni(dni);
 					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exito.jsp");
 				} else {
 					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
@@ -182,7 +282,20 @@ public class CambioServlet extends HttpServlet {
 				req.setAttribute("lista", reservas);
 				System.out.println("jhjhjh");
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/listarReservas.jsp");
-				break;	
+				break;
+			case "borrarPlato":
+				Query qp=pm.newQuery(Plato.class);
+				List<Plato> platos1 = (List<Plato>) qp.execute();
+				req.setAttribute("lista", platos1);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/borrarPlato.jsp");
+			break;
+			
+			case "borrarBebida":
+				Query qb=pm.newQuery(Bebida.class);
+				List<Bebida> bebida1 = (List<Bebida>) qb.execute();
+				req.setAttribute("lista", bebida1);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/borrarBebida.jsp");
+			break;
 				
 			default :
 			 	mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");	

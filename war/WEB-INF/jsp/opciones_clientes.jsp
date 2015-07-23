@@ -12,12 +12,12 @@
 <div class="contenedor">
 	<div class="opciones">
 	<div id="Administrador"></div>
-	<div  class="boton" id="borarCliente">BORRAR</div>
-	<div  class="boton" id="editarCliente">BLOQUEAR</div>
+	<div  class="boton" id="borrarCliente">BORRAR</div>
+	<div  class="boton" id="bloquearCliente">BLOQUEAR</div>
 	<div  class="boton" id="listarCliente">LISTAR</div>
 	<div  class="boton" id="historialCliente">HISTORIAL</div>
 	</div>
-	<div id="subcuerpocliente"> xvdzfcsdfdsfdsfsd</div>
+	<div id="subcuerpocliente"></div>
 </div>
 
 </body>

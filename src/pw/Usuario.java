@@ -33,6 +33,9 @@ public class Usuario {
 	private int admin;
 	
 	@Persistent
+	private boolean bloqueado;
+	
+	@Persistent
 	public ArrayList<Reserva> reservas = new ArrayList<Reserva>();
 	
 	@Persistent
@@ -48,6 +51,7 @@ public class Usuario {
 		this.dni = dni;
 		this.pass = pass;
 		this.admin = admin;
+		this.bloqueado = false;
 	}
 
 	public String getEmail() {
@@ -116,6 +120,14 @@ public class Usuario {
 
 	public void setHistorial(ArrayList<Historial> historial) {
 		this.historial = historial;
+	}
+
+	public boolean getBloqueado() {
+		return bloqueado;
+	}
+
+	public void setBloqueado(boolean bloqueado) {
+		this.bloqueado = bloqueado;
 	}
 
 	@Override

@@ -60,7 +60,7 @@ public class Administrador extends HttpServlet {
 				
 			case "editarAdmin":
 				req.setAttribute("lista", administradores);
-				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/mostrarAdmin.jsp");
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/buscarAdministrador.jsp");
 				break;
 				
 			default :

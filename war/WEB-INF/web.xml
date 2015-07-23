@@ -5,6 +5,22 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
+		<servlet-name>BorrarBebida</servlet-name>
+		<servlet-class>pw.BorrarBebida</servlet-class>
+	</servlet> 
+	<servlet-mapping>
+		<servlet-name>BorrarBebida</servlet-name>
+		<url-pattern>/borrarBebida</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BorrarPlato</servlet-name>
+		<servlet-class>pw.BorrarPlato</servlet-class>
+	</servlet> 
+	<servlet-mapping>
+		<servlet-name>BorrarPlato</servlet-name>
+		<url-pattern>/borrarPlato</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>RestLonccos</servlet-name>
 		<servlet-class>pw.RestLonccosServlet</servlet-class>
 	</servlet> 

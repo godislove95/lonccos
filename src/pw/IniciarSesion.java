@@ -32,6 +32,9 @@ public class IniciarSesion extends HttpServlet {
 			else if(!cliente.get(0).getPass().equals(pass)){
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/passIncorrecto.jsp");
 			}
+			else if(cliente.get(0).getBloqueado() == true){
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/cuentaBloqueada.jsp");
+			}
 			else {
 				sesion.setAttribute("pass", cliente.get(0).getPass());
 				sesion.setAttribute("email", cliente.get(0).getEmail());

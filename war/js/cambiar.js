@@ -80,6 +80,21 @@ $(document).ready(function(){
             }
         });
 	});
+	$("#buscarAdministrador").submit(function(event) {
+		event.preventDefault();
+		var $form = $(this),
+		email = $form.find( "input[name='email']" ).val(),
+	    url = $form.attr( "action" );
+		$("#subcuerpoAdmin").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "post",
+            url: url,
+            data: {"rest": "buscarAdministrador","email": email},
+            success: function(data){
+            	$("#subcuerpoAdmin").html(data);
+            }
+        });
+	});
 	$("#buscarPlato").submit(function(event) {
 		event.preventDefault();
 		var $form = $(this),
@@ -111,6 +126,59 @@ $(document).ready(function(){
             	,"tipo": tipo,"descripcion": descripcion},
             success: function(data){
             	$("#subcuerpomenu").html(data);
+            }
+        });
+	});
+	$("#editarBebidaAccion").submit(function(event) {
+		event.preventDefault();
+		var $form = $(this),
+		nombre = $form.find( "input[name='nombre']" ).val(),
+		precio = $form.find( "input[name='precio']" ).val(),
+		tipo = $form.find( "input[name='tipo']" ).val(),
+		descripcion = $form.find( "textarea[name='descripcion']" ).val(),
+	    url = $form.attr( "action" );
+		$("#subcuerpoBebida").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "post",
+            url: url,
+            data: {"rest": "editarBebidaAccion","nombre": nombre,"precio": precio
+            	,"tipo": tipo,"descripcion": descripcion},
+            success: function(data){
+            	$("#subcuerpoBebida").html(data);
+            }
+        });
+	});
+	$("#buscarBebida").submit(function(event) {
+		event.preventDefault();
+		var $form = $(this),
+		id = $form.find( "input[name='id']" ).val(),
+	    url = $form.attr( "action" );
+		$("#subcuerpoBebida").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "post",
+            url: url,
+            data: {"rest": "buscarBebida","id": id},
+            success: function(data){
+            	$("#subcuerpoBebida").html(data);
+            }
+        });
+	});
+	$("#editarAdministradorAccion").submit(function(event) {
+		event.preventDefault();
+		var $form = $(this),
+		nombre = $form.find( "input[name='nombre']" ).val(),
+		paterno = $form.find( "input[name='paterno']" ).val(),
+		materno = $form.find( "input[name='materno']" ).val(),
+		dni = $form.find( "input[name='dni']" ).val(),
+	    url = $form.attr( "action" );
+		$("#subcuerpoAdmin").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "post",
+            url: url,
+            data: {"rest": "editarAdministradorAccion","nombre": nombre,"paterno": paterno
+            	,"materno": materno,"dni": dni},
+            success: function(data){
+            	$("#subcuerpoAdmin").html(data);
             }
         });
 	});

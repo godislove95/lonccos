@@ -17,17 +17,46 @@ public class AccionAdministrador extends HttpServlet {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		
 		Query q = pm.newQuery(Usuario.class);
-			
-			String accion=req.getParameter("accion");
+		String email;
+		String accion=req.getParameter("accion");
 			
 			switch (accion){
+			case "bloquearAccionCliente":
+				email = req.getParameter("email");
+				q.setFilter("email == emailParam");
+				q.declareParameters("String emailParam");
+				try {
+					List<Usuario> bloqueados = (List<Usuario>)q.execute(email);
+					if(bloqueados.get(0).getBloqueado() == false)
+						bloqueados.get(0).setBloqueado(true);
+					else
+						bloqueados.get(0).setBloqueado(false);
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exitoNormal.jsp");
+				} catch (Exception e) {
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+				}
+				break;
+				
 			case "borrarAdmin":
-				String email = req.getParameter("email");
+				email = req.getParameter("email");
 				q.setFilter("email == emailParam");
 				q.declareParameters("String emailParam");
 				try {
 					List<Usuario> administradores = (List<Usuario>)q.execute(email);
 					pm.deletePersistent(administradores.get(0));
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exitoNormal.jsp");
+				} catch (Exception e) {
+					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+				}
+				break;
+			
+			case "borrarCliente":
+				email = req.getParameter("email");
+				q.setFilter("email == emailParam");
+				q.declareParameters("String emailParam");
+				try {
+					List<Usuario> clientes = (List<Usuario>)q.execute(email);
+					pm.deletePersistent(clientes.get(0));
 					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/exitoNormal.jsp");
 				} catch (Exception e) {
 					mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/error.jsp");

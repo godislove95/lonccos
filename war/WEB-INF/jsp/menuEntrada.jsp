@@ -16,52 +16,45 @@
 	<%
 		if (lista.size() != 0) {
 	%>
-
+	<div class="Title"><h2>LISTA DE ENTRADAS</h2></div>
 	<div class="Table">
-
-		<div class="Title">
-			<h1>LISTA DE ENTRADAS</h1>
-		</div>
-		<div class="Heading">
-			<div class="Cell"><h3>NOMBRE</h3></div>
-			<div class="Cell"><h3>PRECIO</h3></div>
-			<div class="Cell"><h3>DESCRIPCION</h3></div>
-			<div class="Cell"><h3>IMAGEN</h3></div>
-			<div class="Cell"><h3>ID</h3></div>
-		</div>
-
 		<%for(Plato p: lista){%>
-		
 		<div class="Heading">
-			
-			<div class="Cell">
-				<% out.println(p.getNombre()); %>
+		
+			<div class="Cell1">
+			<img class="img" src="/mostrarImagen?blob-key=<% out.println(p.getImg());%>" alt="img">
 			</div>
+			<div class="cell2">
+			<div class="contecell"> 
+					<div class="Heading">
+			<div class="datos"><h3><u>NOMBRE</u></h3></div>
+			<div class="datos">
+						<% out.println(p.getNombre()); %>
+					</div>
 
-			<div class="Cell">
-				<% out.println(p.getPrecio()); %>
+		           </div>
+		   		 <div class="Heading">       
+					<div class="datos"><h3><u>PRECIO</u></h3></div>
+					<div class="datos">
+						<% out.println(p.getPrecio()); %>
+					</div>
+				</div>	
+				<div class="Heading"> 
+				<div class="datos"><h3><u>DESCRIPCION</u></h3></div>   
+					<div class="datos">
+						<textarea disabled ><% out.println(p.getDescripcion()); %></textarea>
+					</div>
+				
+				 </div>
 			</div>
-			
-			<div class="Cell">
-				<% out.println(p.getDescripcion()); %>
 			</div>
-			
-			<div class="Cell">
-							<img class="img" src="/mostrarImagen?blob-key=<% out.println(p.getImg());%>" alt="img">
-			</div>
-			<div class="Cell">
-				<% out.println(p.getId());%>
-			</div>
-
 		</div>
 		<% }%>
-
 	</div>
-
 	<%
 		} else {
 	%>
-	<b> NO EXISTE NINGUNA PLATO</b>
+	<b> NO EXISTE NINGUNA BEBIDA</b>
 	<br> ¡¡¡ Reserve !!!
 	<%}%>
 </body>
