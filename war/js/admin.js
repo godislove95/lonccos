@@ -1,4 +1,16 @@
 $(document).ready(function(){
+	
+	$("#lugarIndex").click(function(event) {
+		$("#cuerpoAdmin").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/administrador",
+            data: {"admin": "lugar"},
+            success: function(data){
+            	$("#cuerpoAdmin").html(data);
+            }
+        });
+	});
 	$("#adminIndex").click(function(event) {
 		$("#cuerpoAdmin").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
@@ -60,6 +72,17 @@ $(document).ready(function(){
             type: "POST",
             url: "/administrador",
             data: {"admin": "agregarAdmin"},
+            success: function(data){
+            	$("#subcuerpoAdmin").html(data);
+            }
+        });
+	});
+	$("#bloquearAdmin").click(function(event) {
+		$("#subcuerpoAdmin").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/administrador",
+            data: {"admin": "bloquearAdmin"},
             success: function(data){
             	$("#subcuerpoAdmin").html(data);
             }

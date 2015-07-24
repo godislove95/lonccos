@@ -12,14 +12,10 @@
 <div class="contenedor">
 	<div class="opciones">
 	<div id="Administrador"></div>
-	<div  class="boton" id="agregarPlato">AGREGAR</div>
-	<div  class="boton" id="bloquearPlato">BLOQUEAR</div>
-	<div  class="boton" id="borrarPlato">BORRAR</div>
-	<div  class="boton" id="editarPlato">EDITAR</div>
-	<div  class="boton" id="listarPlato">LISTAR</div>
-	<div  class="boton" id="imagenPlato">IMAGEN</div>
+	<div  class="boton" id="agregarLugar">AGREGAR</div>
+	<div  class="boton" id="bloquearLugar">BLOQUEAR</div>
 	</div>
-	<div id="subcuerpomenu"></div>
+	<div id="subcuerpoLugar"></div>
 </div>
 
 </body>

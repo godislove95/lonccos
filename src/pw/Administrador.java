@@ -44,6 +44,9 @@ public class Administrador extends HttpServlet {
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/opciones_clientes.jsp");
 				break;
 				
+			case "lugar":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/opciones_lugares.jsp");
+				break;
 			case "agregarAdmin":
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/agregarAdmin.jsp");
 				break;
@@ -61,6 +64,11 @@ public class Administrador extends HttpServlet {
 			case "editarAdmin":
 				req.setAttribute("lista", administradores);
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/buscarAdministrador.jsp");
+				break;
+				
+			case "bloquearAdmin":
+				req.setAttribute("lista", administradores);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/bloquearAdministrador.jsp");
 				break;
 				
 			default :

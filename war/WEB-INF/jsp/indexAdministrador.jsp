@@ -18,6 +18,7 @@
 		<div class="botonAdmin" id="bebidaIndex">Bebidas</div>
 		<div class="botonAdmin" id="reservaIndex">Reservas</div>
 		<div class="botonAdmin" id="clienteIndex">Clientes</div>
+		<div class="botonAdmin" id="lugarIndex">Lugares</div>
 	</div>
 	<div id="cuerpoAdmin">xD</div>
 </div>

@@ -23,6 +23,9 @@ public class Plato {
 	private String descripcion;
 	@Persistent
 	private String img;
+	@Persistent
+	private boolean bloqueado;
+	
 	public Plato(String nombre, String tipo, double precio, String descripcion,
 			String img) {
 		super();
@@ -31,7 +34,20 @@ public class Plato {
 		this.precio = precio;
 		this.descripcion = descripcion;
 		this.img = img;
+		this.bloqueado = false;
 	}
+
+	
+	public boolean getBloqueado() {
+		return bloqueado;
+	}
+
+
+	public void setBloqueado(boolean bloqueado) {
+		this.bloqueado = bloqueado;
+	}
+
+
 	public Key getId() {
 		return id;
 	}

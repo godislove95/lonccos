@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="pw.*"%>
-<%@ page import="javax.servlet.http.*;"%>        
+<%@ page import="java.util.*;"%>
+<%
+	List<Lugar> lista = (List<Lugar>) request.getAttribute("lista");
+%>        
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -34,9 +37,9 @@
 					<p>LUGAR DE RESERVA</p>
 				</div>
 				<div id="columna2"><p>
-					<input type="radio" name="lugar" value="yanahuara">YANAHUARA<br>
-					<input type="radio" name="lugar"value="sachaca">SACHACA<br>
-					<input type="radio"name="lugar" value="socabaya">SOCABAYA
+					<%for (Lugar l : lista) {%>
+					<input type="radio" name="lugar" value="<%out.print(l.getNombre());%>"><%out.print(l.getNombre());%><br>
+					<%}%>
 					</p>
 				</div>
 			</div>

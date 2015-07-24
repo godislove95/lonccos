@@ -1,4 +1,19 @@
 $(document).ready(function(){
+	$("#saveLugar").submit(function(event) {
+		event.preventDefault();
+		var $form = $(this),
+		nombre = $form.find( "input[name='nombreLugar']" ).val(),
+		url = $form.attr( "action" );
+		$("#subcuerpoLugar").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');	
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: {"nombre": nombre},
+				success: function(data){
+					$("#subcuerpoLugar").html(data);
+				}
+		});
+	});
 	$("#savePlato").submit(function(event) {
 
 		event.preventDefault();

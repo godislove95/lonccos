@@ -19,6 +19,7 @@
 	<div class="Title"><h2>LISTA DE SOPA</h2></div>
 	<div class="Table">
 		<%for(Plato p: lista){%>
+		<%if(!p.getBloqueado()){ %>
 		<div class="Heading">
 		
 			<div class="Cell1">
@@ -51,6 +52,7 @@
 		</div>
 		<% }%>
 	</div>
+	<%} %>
 	<%
 		} else {
 	%>

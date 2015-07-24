@@ -2,6 +2,10 @@ package pw;
 
 import java.io.IOException;
 
+import java.util.List;
+
+import javax.jdo.PersistenceManager;
+import javax.jdo.Query;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -11,7 +15,7 @@ public class RestaurantServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException, ServletException {
 		RequestDispatcher mandar = null ;
-		
+		PersistenceManager pm = PMF.get().getPersistenceManager();
 			String rest=req.getParameter("rest");
 			switch (rest){
 			case "inicio":
@@ -39,6 +43,11 @@ public class RestaurantServlet extends HttpServlet {
 				break;
 				
 			case "reservas":
+				Query l1 = pm.newQuery(Lugar.class);
+				l1.setFilter("bloqueo == emailParam");
+				l1.declareParameters("Boolean emailParam");
+				List<Lugar> lugares = (List<Lugar>) l1.execute(false);
+				req.setAttribute("lista", lugares);
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/reservas.jsp");
 				break;
 				

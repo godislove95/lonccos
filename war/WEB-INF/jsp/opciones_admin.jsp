@@ -12,10 +12,11 @@
 
 <div id="subContenedorAdmin">
 	<div id="subOpcionesAdmin">
-		<div class="subBotonAdmin" id="agregarAdmin">Agregar<br>Administrador</div>
-		<div class="subBotonAdmin" id="borrarAdmin">Borrar<br>Administrador</div>
-		<div class="subBotonAdmin" id="editarAdmin">Editar<br>Administrador</div>
-		<div class="subBotonAdmin" id="mostrarAdmin">Mostrar<br>Administrador</div>
+		<div class="subBotonAdmin" id="agregarAdmin">Agregar<br>Admin.</div>
+		<div class="subBotonAdmin" id="bloquearAdmin">Bloquear<br>Admin.</div>
+		<div class="subBotonAdmin" id="borrarAdmin">Borrar<br>Admin.</div>
+		<div class="subBotonAdmin" id="editarAdmin">Editar<br>Admin.</div>
+		<div class="subBotonAdmin" id="mostrarAdmin">Mostrar<br>Admin.</div>
 	</div>
 	<div id="subcuerpoAdmin"></div>
 </div>

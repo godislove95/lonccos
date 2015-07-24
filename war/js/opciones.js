@@ -10,6 +10,29 @@ $(document).ready(function(){
             }
         });
 	});
+	
+	$("#bloquearLugar").click(function(event) {
+		$("#subcuerpoLugar").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/cambio",
+            data: {"rest": "bloquearLugar"},
+            success: function(data){
+            	$("#subcuerpoLugar").html(data);
+            }
+        });
+	});
+	$("#bloquearPlato").click(function(event) {
+		$("#subcuerpomenu").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/cambio",
+            data: {"rest": "bloquearPlato"},
+            success: function(data){
+            	$("#subcuerpomenu").html(data);
+            }
+        });
+	});
 	$("#bloquearCliente").click(function(event) {
 		$("#subcuerpocliente").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
 		$.ajax({
@@ -41,6 +64,17 @@ $(document).ready(function(){
             data: {"rest": "historialCliente"},
             success: function(data){
             	$("#subcuerpocliente").html(data);
+            }
+        });
+	});
+	$("#agregarLugar").click(function(event) {
+		$("#subcuerpoLugar").html('<img id="cargando" alt="cargando" src="img/cargando.gif">');
+		$.ajax({
+            type: "POST",
+            url: "/cambio",
+            data: {"rest": "agregarLugar"},
+            success: function(data){
+            	$("#subcuerpoLugar").html(data);
             }
         });
 	});

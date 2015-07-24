@@ -5,6 +5,15 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
+		<servlet-name>SaveLugar</servlet-name>
+		<servlet-class>pw.SaveLugar</servlet-class>
+	</servlet> 
+	<servlet-mapping>
+		<servlet-name>SaveLugar</servlet-name>
+		<url-pattern>/saveLugar</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>BorrarBebida</servlet-name>
 		<servlet-class>pw.BorrarBebida</servlet-class>
 	</servlet> 

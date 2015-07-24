@@ -87,6 +87,20 @@ public class CambioServlet extends HttpServlet {
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/noExisteReserva.jsp");
 				break;
 				
+			case "bloquearLugar":
+				Query l2 = pm.newQuery(Lugar.class);
+				List<Lugar> lugar = (List<Lugar>) l2.execute();
+				req.setAttribute("lista", lugar);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/bloquearLugares.jsp");
+				break;
+				
+			case "bloquearPlato":
+				Query p2 = pm.newQuery(Plato.class);
+				List<Plato> platos2 = (List<Plato>) p2.execute();
+				req.setAttribute("lista", platos2);
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/bloquearPlatos.jsp");
+				break;
+				
 			case "bloquearCliente":
 				Query c1 = pm.newQuery(Usuario.class);
 				c1.setFilter("admin == adminParam");
@@ -119,7 +133,10 @@ public class CambioServlet extends HttpServlet {
 				System.out.println("hgf");
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/historialClientes.jsp");
 				break;	
-			
+				
+			case "agregarLugar":
+				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/agregarLugar.jsp");
+				break;	
 			case "agregarPlato":
 				mandar=getServletContext().getRequestDispatcher("/WEB-INF/jsp/agregarPlato.jsp");
 				break;	
